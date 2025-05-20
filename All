@@ -19,11 +19,10 @@ local scripts = {
     local sharedFunction = function()
         loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
     end
-    
     local scripts = {
-        [16732694052] = sharedFunction,
-        [72992062125248] = sharedFunction,
-        [85896571713843] = sharedFunction,
+        [16732694052] = sharedFunction, --Fisch
+        [72992062125248] = sharedFunction, --Hunter
+        [85896571713843] = sharedFunction, --Bubble Gum Simulator
     }
 }
 
