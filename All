@@ -37,10 +37,10 @@ local scripts = {
     end
     
     local scripts = {
-        [16732694052] = sharedFunction,
-        [72992062125248] = sharedFunction,
-        [85896571713843] = sharedFunction,
-        [72829404259339] = sharedFunction,
+        [16732694052] = sharedFunction, --FIsch
+        [72992062125248] = sharedFunction, --Hunter
+        [85896571713843] = sharedFunction, --Bubble Gum Simulator
+        [72829404259339] = sharedFunction, --Anime Ranger X
     }
 }
 
