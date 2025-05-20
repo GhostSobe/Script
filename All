@@ -9,10 +9,6 @@ local __f = {
             return function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/yourrepo/yourpath/yourfile.lua"))()
             end
-        elseif g == 17316900493 then
-            return function()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSimulator"))()
-            end
         elseif g == 116495829188952 then
             return function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/DeadRails"))()
