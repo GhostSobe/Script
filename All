@@ -38,11 +38,14 @@ local scripts = {
     [72829404259339] = function()
         loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
     end,
-
-    [2753915549] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))()
-    end, 
 ]]
+    [2753915549] = function()
+        local Settings = {
+          JoinTeam = "Pirates"; -- Pirates/Marines
+          Translator = true; -- true/false
+        }
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)
+    end, 
 }
 
 local runScript = scripts[PlaceId]
