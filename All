@@ -1,6 +1,7 @@
 local __f = {
     ['__game'] = function()
-        local g = game.GameId
+        local g = tonumber(game.PlaceId) or 0
+        print("Current PlaceId:", g)
         if g == 87039211657390 then
             return function()
                 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2ce7e630501737f0c9ee24a2e809565d.lua"))()
@@ -8,6 +9,10 @@ local __f = {
         elseif g == 17850641257 then
             return function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/yourrepo/yourpath/yourfile.lua"))()
+            end
+        elseif g == 17316900493 then
+            return function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSimulator"))()
             end
         elseif g == 116495829188952 then
             return function()
