@@ -16,9 +16,6 @@ local scripts = {
     [126884695634066] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden"))()
     end,
-    [16732694052] = function()
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/40142043704f8ec418b59eddd1cb1949.lua"))()
-    end,
 }
 
 local runScript = scripts[PlaceId]
