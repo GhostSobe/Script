@@ -1,20 +1,17 @@
 local PlaceId = game.PlaceId
 
 local scripts = {
+    [87039211657390] = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2ce7e630501737f0c9ee24a2e809565d.lua"))()
+    end,
     [17474746614] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/7DaysToLive"))()
-    end,
-    [72829404259339] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeRangersX"))()
     end,
     [17850641257] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSaga"))()
     end,
     [17316900493] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSimulator"))()
-    end,
-    [87039211657390] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AriseCrossover"))()
     end,
     [18668065416] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/BlueLock"))()
@@ -29,6 +26,15 @@ local scripts = {
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit"))()
     end,
     [16732694052] = function()
+        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
+    end,
+    [72992062125248] = function()
+        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
+    end,
+    [85896571713843] = function()
+        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
+    end,
+    [72829404259339] = function()
         loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
     end,
     [2753915549] = function()
