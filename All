@@ -1,24 +1,35 @@
-local PlaceId = game.PlaceId
-
-local scripts = {
-    [87039211657390] = function()
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2ce7e630501737f0c9ee24a2e809565d.lua"))()
-    end,
-    [17850641257] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSaga"))()
-    end,
-    [17316900493] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSimulator"))()
-    end,
-    [116495829188952] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/DeadRails"))()
-    end,
-    [126884695634066] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden"))()
-    end,
+local __f = {
+    ['__game'] = function()
+        local g = game.GameId
+        if g == 87039211657390 then
+            return function()
+                loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2ce7e630501737f0c9ee24a2e809565d.lua"))()
+            end
+        elseif g == 17850641257 then
+            return function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/yourrepo/yourpath/yourfile.lua"))()
+            end
+        elseif g == 17316900493 then
+            return function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSimulator"))()
+            end
+        elseif g == 116495829188952 then
+            return function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/DeadRails"))()
+            end
+        elseif g == 126884695634066 then
+            return function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden"))()
+            end
+        else
+            return
+                return nil
+            end
+        end
+    end
 }
 
-local runScript = scripts[PlaceId]
+local runScript = __f['__game']()
 
 if runScript then
     runScript()
