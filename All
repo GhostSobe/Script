@@ -13,6 +13,7 @@ local scripts = {
     [17316900493] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSimulator"))()
     end,
+--[[
     [18668065416] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/BlueLock"))()
     end,
@@ -25,6 +26,7 @@ local scripts = {
     [95295765150201] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit"))()
     end,
+]]
 }
 
 local runScript = scripts[PlaceId]
