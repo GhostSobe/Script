@@ -26,24 +26,8 @@ local scripts = {
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit"))()
     end,
     [2753915549] = function()
-        local Settings = {
-          JoinTeam = "Pirates"; -- Pirates/Marines
-          Translator = true; -- true/false
-        }
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)
-    end, 
---[[
-    local sharedFunction = function()
-        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
-    end
-    
-    local scripts = {
-        [16732694052] = sharedFunction, --FIsch
-        [72992062125248] = sharedFunction, --Hunter
-        [85896571713843] = sharedFunction, --Bubble Gum Simulator
-        [72829404259339] = sharedFunction, --Anime Ranger X
-    }
-]]
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))()
+    end,
 }
 
 local runScript = scripts[PlaceId]
