@@ -32,6 +32,7 @@ local scripts = {
         }
         loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)
     end, 
+--[[
     local sharedFunction = function()
         loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
     end
@@ -42,6 +43,7 @@ local scripts = {
         [85896571713843] = sharedFunction, --Bubble Gum Simulator
         [72829404259339] = sharedFunction, --Anime Ranger X
     }
+]]
 }
 
 local runScript = scripts[PlaceId]
