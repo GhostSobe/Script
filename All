@@ -1,0 +1,60 @@
+local PlaceId = game.PlaceId
+
+local scripts = {
+    [17474746614] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/7DaysToLive"))()
+    end,
+    [72829404259339] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeRangersX"))()
+    end,
+    [17850641257] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSaga"))()
+    end,
+    [17316900493] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSimulator"))()
+    end,
+    [87039211657390] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AriseCrossover"))()
+    end,
+    [18668065416] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/BlueLock"))()
+    end,
+    [116495829188952] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/DeadRails"))()
+    end,
+    [126884695634066] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden"))()
+    end,
+    [95295765150201] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit"))()
+    end,
+    [16732694052] = function()
+        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
+    end,
+    [2753915549] = function()
+        local Settings = {
+          JoinTeam = "Pirates"; -- Pirates/Marines
+          Translator = true; -- true/false
+        }
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)
+    end,
+}
+
+local runScript = scripts[PlaceId]
+
+if runScript then
+    runScript()
+else
+    -- แสดงข้อความเตือนก่อนเตะออก
+    local message = "This map is not supported by the script."
+    -- ใช้ StarterGui:SetCore เพื่อแสดงข้อความให้ผู้เล่นเห็น (Toast notification)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Script Warning";
+        Text = message;
+        Duration = 5;
+    })
+    wait(5) -- รอให้ผู้เล่นเห็นข้อความสัก 5 วินาที
+    
+    -- เตะผู้เล่นออกจากเกม (Kick)
+    game.Players.LocalPlayer:Kick(message)
+end
