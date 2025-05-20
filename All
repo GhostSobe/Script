@@ -51,16 +51,7 @@ local runScript = scripts[PlaceId]
 if runScript then
     runScript()
 else
-    -- แสดงข้อความเตือนก่อนเตะออก
     local message = "This map is not supported by the script."
-    -- ใช้ StarterGui:SetCore เพื่อแสดงข้อความให้ผู้เล่นเห็น (Toast notification)
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Script Warning";
-        Text = message;
-        Duration = 5;
     })
-    wait(5) -- รอให้ผู้เล่นเห็นข้อความสัก 5 วินาที
-    
-    -- เตะผู้เล่นออกจากเกม (Kick)
     game.Players.LocalPlayer:Kick(message)
 end
