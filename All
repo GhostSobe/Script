@@ -25,6 +25,7 @@ local scripts = {
     [95295765150201] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit"))()
     end,
+--[[
     [16732694052] = function()
         loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
     end,
@@ -37,10 +38,11 @@ local scripts = {
     [72829404259339] = function()
         loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
     end,
---[[
+
     [2753915549] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))()
-    end, ]]
+    end, 
+]]
 }
 
 local runScript = scripts[PlaceId]
