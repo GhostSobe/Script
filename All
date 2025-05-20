@@ -25,20 +25,6 @@ local scripts = {
     [95295765150201] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit"))()
     end,
---[[
-    [16732694052] = function()
-        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
-    end,
-    [72992062125248] = function()
-        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
-    end,
-    [85896571713843] = function()
-        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
-    end,
-    [72829404259339] = function()
-        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
-    end,
-]]
     [2753915549] = function()
         local Settings = {
           JoinTeam = "Pirates"; -- Pirates/Marines
