@@ -37,9 +37,10 @@ local scripts = {
     [72829404259339] = function()
         loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
     end,
+--[[
     [2753915549] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))()
-    end,
+    end, ]]
 }
 
 local runScript = scripts[PlaceId]
