@@ -51,7 +51,5 @@ local runScript = scripts[PlaceId]
 if runScript then
     runScript()
 else
-    local message = "This map is not supported by the script."
-    })
-    game.Players.LocalPlayer:Kick(message)
+    game.Players.LocalPlayer:Kick("This map is not supported by the script.")
 end
