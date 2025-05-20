@@ -16,6 +16,15 @@ local scripts = {
     [126884695634066] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden"))()
     end,
+    local sharedFunction = function()
+        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
+    end
+    
+    local scripts = {
+        [16732694052] = sharedFunction,
+        [72992062125248] = sharedFunction,
+        [85896571713843] = sharedFunction,
+    }
 }
 
 local runScript = scripts[PlaceId]
