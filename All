@@ -46,7 +46,8 @@ if runScript then
     runScript()
 else
     -- แสดงข้อความเตือนก่อนเตะออก
-    local message = "This map is not supported by the script."
+    --local message = "This map is not supported by the script."
+    local message = "Script ไม่รับรองแมพนี้."
     -- ใช้ StarterGui:SetCore เพื่อแสดงข้อความให้ผู้เล่นเห็น (Toast notification)
     game.StarterGui:SetCore("SendNotification", {
         Title = "Script Warning";
