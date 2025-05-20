@@ -25,9 +25,6 @@ local scripts = {
     [95295765150201] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit"))()
     end,
-    [2753915549] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))()
-    end,
 }
 
 local runScript = scripts[PlaceId]
