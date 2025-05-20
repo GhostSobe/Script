@@ -21,10 +21,12 @@ local __f = {
             return function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden"))()
             end
-        else
-            return
-                return nil
+        elseif g == 72829404259339 then
+            return function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeRangersX"))()
             end
+        else
+            return nil
         end
     end
 }
