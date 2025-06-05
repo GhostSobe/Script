@@ -1,0 +1,22 @@
+repeat wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+if game.PlaceId == 72829404259339 then --AnimeRangersX
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeRangersX"))()
+elseif game.PlaceId == 17850641257 then --AnimeSaga
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSaga"))()
+elseif game.PlaceId == 87039211657390 then --AriseCrossover
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AriseCrossover"))()
+elseif game.PlaceId == 122678592501168 then --Beaks
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/Beaks"))()
+elseif game.PlaceId == 18668065416 then --BlueLock
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/BlueLock"))()
+elseif game.PlaceId == 116495829188952 then --DeadRails
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/DeadRails"))()
+elseif game.PlaceId == 126884695634066 then --GrowaGarden
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden"))()
+elseif game.PlaceId == 72992062125248 then --Hunters
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/Hunters"))()
+elseif game.PlaceId == 95295765150201 then --RockFruit
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit"))()
+else 
+    game.Players.LocalPlayer:Kick("สคริปต์ไม่ซัพพอร์ตแมพนี้!")
+end

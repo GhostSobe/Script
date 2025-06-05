@@ -1,8 +1,0 @@
-repeat wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
-if game.PlaceId == 4457085477 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Source/refs/heads/main/Clover"))()
-elseif game.PlaceId == 5935619804 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Source/refs/heads/main/SS"))()
-else 
-    game.Players.LocalPlayer:Kick("Not Supported")
-end
