@@ -1,0 +1,25 @@
+local notrejoin = false
+local DataSer = require(game:GetService("ReplicatedStorage").Modules.DataService)
+
+while true do wait()
+    for i, v in pairs(DataSer:GetData().SavedObjects) do
+        if v.ObjectType == "PetEgg" then
+            if v.Data.RandomPetData ~= nil then
+                if v.Data.CanHatch then
+                    if table.find(_G.TargetNames, v.Data.RandomPetData.Name) then
+                        notrejoin = true
+                    end
+                end
+            end
+        end
+    end
+
+    if notrejoin then
+        print("Found Eggs!")
+    else
+        wait(3)
+        game:GetService("Players").LocalPlayer:Kick("ไม่เจอสัตว์ในรายชื่อ เปลี่ยนเซิร์ฟสักครู่\nRejoin")
+        task.wait(1)
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+    end
+end
