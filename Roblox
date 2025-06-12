@@ -1,0 +1,104 @@
+--[[
+    Universal Script Loader
+    รองรับหลายเกมใน Roblox
+    Created by: Moob
+]]--
+
+print("กำลังรอให้เกมโหลด...")
+repeat task.wait(0.1) until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+
+local Players = game:GetService("Players")
+local HttpService = game:GetService("HttpService")
+local LocalPlayer = Players.LocalPlayer
+local PlaceId = game.PlaceId
+
+print("เกมโหลดเสร็จแล้ว! PlaceId: " .. tostring(PlaceId))
+
+local function loadScript(url, gameName)
+    print("กำลังโหลดสคริปต์สำหรับ: " .. gameName)
+    
+    local success, result = pcall(function()
+        local scriptContent = game:HttpGet(url)
+        return loadstring(scriptContent)()
+    end)
+    
+    if success then
+        print("โหลดสคริปต์สำเร็จ: " .. gameName)
+    else
+        warn("ไม่สามารถโหลดสคริปต์ได้: " .. gameName)
+        warn("Error: " .. tostring(result))
+        
+        -- แจ้งเตือนผู้เล่น
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Script Loader",
+            Text = "ไม่สามารถโหลดสคริปต์สำหรับ " .. gameName .. " ได้",
+            Duration = 5,
+        })
+    end
+end
+
+if PlaceId == 72829404259339 then -- AnimeRangersX
+    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeRangersX", "AnimeRangersX")
+    
+elseif PlaceId == 17850641257 then -- AnimeSaga
+    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSaga", "AnimeSaga")
+    
+elseif PlaceId == 87039211657390 then -- AriseCrossover
+    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AriseCrossover", "AriseCrossover")
+    
+elseif PlaceId == 122678592501168 then -- Beaks
+    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/Beaks", "Beaks")
+    
+elseif PlaceId == 18668065416 then -- BlueLock
+    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/BlueLock", "BlueLock")
+    
+elseif PlaceId == 116495829188952 then -- DeadRails
+    loadScript("https://getnative.cc/script/loader", "DeadRails")
+    
+elseif PlaceId == 126884695634066 then -- GrowaGarden
+    loadScript("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", "GrowaGarden")
+    
+elseif PlaceId == 72992062125248 then -- Hunters
+    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/Hunters", "Hunters")
+    
+elseif PlaceId == 95295765150201 then -- RockFruit
+    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit", "RockFruit")
+    
+elseif PlaceId == 2753915549 then -- Blox Fruits
+    loadScript("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau", "Blox Fruits")
+    
+elseif PlaceId == 155615604 then -- Prison Life
+    loadScript("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt", "Prison Life")
+    
+elseif PlaceId == 286090429 then -- Arsenal
+    loadScript("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal", "Arsenal")
+    
+elseif PlaceId == 6284583030 then -- Pet Simulator X
+    loadScript("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Mainstring.lua", "Pet Simulator X")
+    
+elseif PlaceId == 537413528 then -- Build A Boat For Treasure
+    loadScript("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua", "Build A Boat For Treasure")
+    
+elseif PlaceId == 606849621 then -- Jailbreak
+    loadScript("https://raw.githubusercontent.com/wally-rblx/nexus-jailbreak/main/main.lua", "Jailbreak")
+    
+elseif PlaceId == 6872274481 then -- Bedwars
+    loadScript("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", "Bedwars")
+    
+elseif PlaceId == 8560631822 then -- Tapping Simulator
+    loadScript("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Mainstring.lua", "Tapping Simulator")
+    
+else
+    warn("เกมนี้ไม่ได้รับการรองรับ PlaceId: " .. tostring(PlaceId))
+    
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Script Loader",
+        Text = "สคริปต์ไม่ซัพพอร์ตเกมนี้!",
+        Duration = 5,
+    })
+    
+    task.wait(3)
+    LocalPlayer:Kick("สคริปต์ไม่ซัพพอร์ตแมพนี้! PlaceId: " .. tostring(PlaceId))
+end
+
+print("Script Loader เสร็จสิ้น!")
