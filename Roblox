@@ -66,28 +66,7 @@ elseif PlaceId == 95295765150201 then -- RockFruit
     
 elseif PlaceId == 2753915549 then -- Blox Fruits
     loadScript("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau", "Blox Fruits")
-    
-elseif PlaceId == 155615604 then -- Prison Life
-    loadScript("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt", "Prison Life")
-    
-elseif PlaceId == 286090429 then -- Arsenal
-    loadScript("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal", "Arsenal")
-    
-elseif PlaceId == 6284583030 then -- Pet Simulator X
-    loadScript("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Mainstring.lua", "Pet Simulator X")
-    
-elseif PlaceId == 537413528 then -- Build A Boat For Treasure
-    loadScript("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua", "Build A Boat For Treasure")
-    
-elseif PlaceId == 606849621 then -- Jailbreak
-    loadScript("https://raw.githubusercontent.com/wally-rblx/nexus-jailbreak/main/main.lua", "Jailbreak")
-    
-elseif PlaceId == 6872274481 then -- Bedwars
-    loadScript("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", "Bedwars")
-    
-elseif PlaceId == 8560631822 then -- Tapping Simulator
-    loadScript("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Mainstring.lua", "Tapping Simulator")
-    
+
 else
     warn("เกมนี้ไม่ได้รับการรองรับ PlaceId: " .. tostring(PlaceId))
     
