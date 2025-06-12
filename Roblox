@@ -37,19 +37,19 @@ local function loadScript(url, gameName)
 end
 
 if PlaceId == 72829404259339 then -- AnimeRangersX
-    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeRangersX", "AnimeRangersX")
+    loadScript("https://scripts.alchemyhub.xyz", "AnimeRangersX")
     
 elseif PlaceId == 17850641257 or PlaceId == 17850769550 then -- AnimeSaga
-    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSaga", "AnimeSaga")
+    loadScript("https://scripts.alchemyhub.xyz", "AnimeSaga")
     
 elseif PlaceId == 87039211657390 then -- AriseCrossover
     loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AriseCrossover", "AriseCrossover")
     
 elseif PlaceId == 122678592501168 then -- Beaks
-    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/Beaks", "Beaks")
+    loadScript("https://scripts.alchemyhub.xyz", "Beaks")
     
 elseif PlaceId == 18668065416 then -- BlueLock
-    loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/BlueLock", "BlueLock")
+    loadScript("https://scripts.alchemyhub.xyz", "BlueLock")
     
 elseif PlaceId == 116495829188952 then -- DeadRails
     loadScript("https://getnative.cc/script/loader", "DeadRails")
@@ -68,6 +68,9 @@ elseif PlaceId == 2753915549 or PlaceId == 4442272183 or PlaceId == 7449423635 t
 
 elseif PlaceId == 4520749081 or PlaceId == 6381829480 or PlaceId == 15759515082 or PlaceId == 5931540094 then -- King Legacy
     loadScript("https://zuwz.me/Ls-Zee-Hub-KL", "King Legacy")
+
+elseif PlaceId == 10450270085 then -- Jujutsu Infinite
+    loadScript("https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Jujutsu%20Infinite.lua", "Jujutsu Infinite")
 
 else
     warn("เกมนี้ไม่ได้รับการรองรับ PlaceId: " .. tostring(PlaceId))
