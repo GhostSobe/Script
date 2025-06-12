@@ -66,6 +66,9 @@ elseif PlaceId == 95295765150201 then -- RockFruit
 elseif PlaceId == 2753915549 then -- Blox Fruits
     loadScript("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau", "Blox Fruits")
 
+elseif PlaceId == 4520749081 then -- King Legacy
+    loadScript("https://zuwz.me/Ls-Zee-Hub-KL", "King Legacy")
+
 else
     warn("เกมนี้ไม่ได้รับการรองรับ PlaceId: " .. tostring(PlaceId))
     
