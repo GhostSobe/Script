@@ -39,7 +39,7 @@ end
 if PlaceId == 72829404259339 then -- AnimeRangersX
     loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeRangersX", "AnimeRangersX")
     
-elseif PlaceId == 17850641257 then -- AnimeSaga
+elseif PlaceId == 17850641257 or PlaceId == 17850769550 then -- AnimeSaga
     loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/AnimeSaga", "AnimeSaga")
     
 elseif PlaceId == 87039211657390 then -- AriseCrossover
@@ -63,10 +63,10 @@ elseif PlaceId == 72992062125248 then -- Hunters
 elseif PlaceId == 95295765150201 then -- RockFruit
     loadScript("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/RockFruit", "RockFruit")
     
-elseif PlaceId == 2753915549 then -- Blox Fruits
+elseif PlaceId == 2753915549 or PlaceId == 4442272183 or PlaceId == 7449423635 then -- Blox Fruits
     loadScript("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau", "Blox Fruits")
 
-elseif PlaceId == 4520749081 then -- King Legacy
+elseif PlaceId == 4520749081 or PlaceId == 6381829480 or PlaceId == 15759515082 or PlaceId == 5931540094 then -- King Legacy
     loadScript("https://zuwz.me/Ls-Zee-Hub-KL", "King Legacy")
 
 else
