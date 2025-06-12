@@ -28,7 +28,6 @@ local function loadScript(url, gameName)
         warn("ไม่สามารถโหลดสคริปต์ได้: " .. gameName)
         warn("Error: " .. tostring(result))
         
-        -- แจ้งเตือนผู้เล่น
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Script Loader",
             Text = "ไม่สามารถโหลดสคริปต์สำหรับ " .. gameName .. " ได้",
