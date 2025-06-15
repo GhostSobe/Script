@@ -1,7 +1,7 @@
 --[[
     Universal Script Loader
     รองรับหลายเกมใน Roblox
-    Created by: Moob
+    Created by: Moon
 ]]--
 
 print("กำลังรอให้เกมโหลด...")
