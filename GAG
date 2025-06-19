@@ -50,7 +50,7 @@ if _G.TargetNames then
     StarterGui:SetCore("SendNotification", {
         Title = "System",
         Text = "สคริปต์หาสัตว์เลี้ยงไม่สามารถใช้งานได้แล้ว!",
-        Duration = 4,
+        Duration = 5,
     })
     task.wait(2)
     StarterGui:SetCore("SendNotification", {
