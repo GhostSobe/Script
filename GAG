@@ -23,4 +23,24 @@
 --         game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 --     end
 -- end
-game.Players.LocalPlayer:Kick("สคริปต์นี้ได้ปิดการใช้งานแล้วเนื่องจาก ทางผู้พัฒนาเกมได้ทำการแก้ไขแล้วไม่สามารถใช้งานได้ ขออภัยในความไม่สะดวก")
+if _G.TargetNames then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "System",
+        Text = "สคริปต์หาสัตว์เลี้ยงไม่สามารถใช้งานได้แล้ว เราได้เปลี่ยนสคริปต์ให้คุณแล้ว!",
+        Duration = 6,
+    })
+    task.wait(3)
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Please Wait",
+        Text = "โปรดรอสคริปต์โหลดสักครู่!",
+        Duration = 3,
+    })
+    task.wait(5)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+        task.wait(3)
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Successfully",
+        Text = "สคริปต์ได้โหลดเสร็จแล้ว ขอให้สนุก",
+        Duration = 3,
+    })
+end
