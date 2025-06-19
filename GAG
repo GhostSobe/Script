@@ -23,24 +23,43 @@
 --         game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 --     end
 -- end
-if _G.TargetNames then
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "System",
-        Text = "สคริปต์หาสัตว์เลี้ยงไม่สามารถใช้งานได้แล้ว เราได้เปลี่ยนสคริปต์ให้คุณแล้ว!",
-        Duration = 6,
-    })
-    task.wait(3)
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Please Wait",
-        Text = "โปรดรอสคริปต์โหลดสักครู่!",
-        Duration = 3,
-    })
-    task.wait(5)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
-        task.wait(3)
-        game:GetService("StarterGui"):SetCore("SendNotification", {
+local StarterGui = game:GetService("StarterGui")
+local bindable = Instance.new("BindableFunction")
+
+function bindable.OnInvoke(response)
+	if response == "ใช่" then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+
+        StarterGui:SetCore("SendNotification", {
         Title = "Successfully",
         Text = "สคริปต์ได้โหลดเสร็จแล้ว ขอให้สนุก",
-        Duration = 3,
+        Duration = 4,
+    })
+	elseif response == "ไม่" then
+        StarterGui:SetCore("SendNotification", {
+            Title = "System",
+            Text = "คุณไม่ได้เลือกโหลดสคริปต์ Speed Hub",
+            Duration = 4,
+        })
+	else
+		print("Unknown option: " .. tostring(response))
+	end
+end
+
+if _G.TargetNames then
+    StarterGui:SetCore("SendNotification", {
+        Title = "System",
+        Text = "สคริปต์หาสัตว์เลี้ยงไม่สามารถใช้งานได้แล้ว!",
+        Duration = 4,
+    })
+    task.wait(2)
+    StarterGui:SetCore("SendNotification", {
+        Title = "ตัวเลือกเพิ่มเติม",
+        Text = "คุณต้องการใช้สคริปต์ Speed Hub X แทนหรือไม่?",
+        Duration = 8,
+        Callback = bindable,
+        Button1 = "ใช่",
+        Button2 = "ไม่"
     })
 end
+
