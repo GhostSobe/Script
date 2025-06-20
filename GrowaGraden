@@ -148,4 +148,31 @@ SaveManager:SetFolder("GhostHub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 -- SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
+
+local CoreGui = game:GetService("CoreGui")
+local logoGui = Instance.new("ScreenGui")
+
+logoGui.Name = "GhostHub"
+logoGui.ResetOnSpawn = false
+logoGui.Parent = CoreGui.ScreenGui
+
+local logoButton = Instance.new("ImageButton")
+logoButton.Name = "LogoButton"
+logoButton.Size = UDim2.new(0, 70, 0, 70)
+logoButton.Position = UDim2.new(0, 65, 0, 50)
+logoButton.BackgroundTransparency = 1
+logoButton.Image = "rbxassetid://96080169937759"
+logoButton.Parent = logoGui
+logoButton.ZIndex = 999
+
+local isOpen = true
+
+logoButton.MouseButton1Click:Connect(function()
+    isOpen = not isOpen
+    local fluentGui = CoreGui:FindFirstChild("ScreenGui")
+    if fluentGui then
+        fluentGui.Enabled = isOpen
+    end
+end)
+
 SaveManager:LoadAutoloadConfig()
