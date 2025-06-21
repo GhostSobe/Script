@@ -9,7 +9,7 @@ local Window = Fluent:CreateWindow({
     Size = UDim2.fromOffset(580, 460),
     Acrylic = false, 
     Theme = "Amethyst",
-    MinimizeKey = Enum.KeyCode.LeftControl 
+    MinimizeKey = Enum.KeyCode.LeftControl
 })
 
 local Tabs = {
@@ -42,6 +42,7 @@ local ScriptK = {
     "DrRox Hub",
     "Space Hub",
     "ComboChronicle Vault",
+    "Bonk Hub",
 }
 
 do
@@ -109,6 +110,8 @@ do
         Callback = function()
             if ScriptsK == "Lunor" then
                 loadstring(game:HttpGet("https://lunor.dev/loader"))()
+            elseif ScriptsK == "Bonk Hub" then
+                loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
             elseif ScriptsK == "Native" then
                 (loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
             elseif ScriptsK == "H4xScript" then
@@ -148,31 +151,4 @@ SaveManager:SetFolder("GhostHub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 -- SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
-
-local CoreGui = game:GetService("CoreGui")
-local logoGui = Instance.new("ScreenGui")
-
-logoGui.Name = "GhostHub"
-logoGui.ResetOnSpawn = false
-logoGui.Parent = CoreGui.ScreenGui
-
-local logoButton = Instance.new("ImageButton")
-logoButton.Name = "LogoButton"
-logoButton.Size = UDim2.new(0, 70, 0, 70)
-logoButton.Position = UDim2.new(0, 65, 0, 50)
-logoButton.BackgroundTransparency = 1
-logoButton.Image = "rbxassetid://96080169937759"
-logoButton.Parent = logoGui
-logoButton.ZIndex = 999
-
-local isOpen = true
-
-logoButton.MouseButton1Click:Connect(function()
-    isOpen = not isOpen
-    local fluentGui = CoreGui:FindFirstChild("ScreenGui")
-    if fluentGui then
-        fluentGui.Enabled = isOpen
-    end
-end)
-
 SaveManager:LoadAutoloadConfig()
