@@ -24,6 +24,7 @@ local Script = {
     "Speed Hub",
     "Nat Hub",
     "No-Lag Hub",
+    "Jimi Hub",
     "Black Hub",
     "Depthso",
     "Doggo's Hub",
@@ -35,6 +36,7 @@ local Script = {
 
 local ScriptK = {
     "Lunor",
+    "Bonk Hub",
     "Native",
     "H4xScript",
     "Forge Hub",
@@ -42,7 +44,6 @@ local ScriptK = {
     "DrRox Hub",
     "Space Hub",
     "ComboChronicle Vault",
-    "Bonk Hub",
 }
 
 do
@@ -71,6 +72,8 @@ do
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
             elseif Scripts == "No-Lag Hub" then
                 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV1.lua"))()
+            elseif Scripts == "Jimi Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/bunnnwee/JimiHub/refs/heads/main/GrowAGarden-Normal"))()
             elseif Scripts == "Black Hub" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Skibidiking123/Fisch1/refs/heads/main/FischMain"))()
             elseif Scripts == "Depthso" then
