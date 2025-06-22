@@ -1,0 +1,189 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "Rocket | Grow a Garden |",
+    SubTitle = "by Moon",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = false, 
+    Theme = "Amethyst",
+    MinimizeKey = Enum.KeyCode.LeftControl
+})
+
+local Tabs = {
+    Main = Window:AddTab({ Title = "เมนูหลัก", Icon = "crown" }),
+    Contact = Window:AddTab({ Title = "ติดต่อ", Icon = "contact" }),
+    Settings = Window:AddTab({ Title = "ตั้งค่า", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+local Script = {
+    "Speed Hub",
+    "Nat Hub",
+    "No-Lag Hub",
+    "Jimi Hub",
+    "Black Hub",
+    "Depthso",
+    "Doggo's Hub",
+    "Mauscripts",
+    "Xerox Hub",
+    "Gumanba",
+    "Somtank"
+}
+
+local ScriptK = {
+    "Lunor",
+    "Bonk Hub",
+    "Native",
+    "H4xScript",
+    "Forge Hub",
+    "Mercenaries",
+    "DrRox Hub",
+    "Space Hub",
+    "ComboChronicle Vault",
+}
+
+do
+    Tabs.Main:AddSection("[ ไม่มีคีย์ ]")
+
+    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+        Title = "เลือกสคริปต์ที่ต้องการ",
+        Values = Script,
+        Multi = false,
+        Default = nil,
+    })
+
+    --Dropdown:SetValue("four")
+
+    Dropdown:OnChanged(function(Value)
+        Scripts = Value
+    end)
+--------------------------------------------
+    Tabs.Main:AddButton({
+        Title = "กดเพื่อรันสคริปต์",
+        Description = "",
+        Callback = function()
+            if Scripts == "Speed Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
+            elseif Scripts == "Nat Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
+            elseif Scripts == "No-Lag Hub" then
+                loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV1.lua"))()
+            elseif Scripts == "Jimi Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/bunnnwee/JimiHub/refs/heads/main/GrowAGarden-Normal"))()
+            elseif Scripts == "Black Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Skibidiking123/Fisch1/refs/heads/main/FischMain"))()
+            elseif Scripts == "Depthso" then
+                loadstring(game:HttpGet(('https://raw.githubusercontent.com/depthso/Grow-a-Garden/refs/heads/main/autofarm.lua')))()
+            elseif Scripts == "Doggo's Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/doggoman230/growagarden/refs/heads/main/script"))()
+            elseif Scripts == "Mauscripts" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/nootmaus/GrowAAGarden/refs/heads/main/mauscripts"))()
+            elseif Scripts == "Xerox Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-xyzs/GAG/refs/heads/main/GrowAGardenXE"))()
+            elseif Scripts == "Gumanba" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden", true))()
+            elseif Scripts == "Somtank" then
+                loadstring(game:HttpGet('https://pastebin.com/raw/BjkuU1TV'))()
+            end
+        end
+    })
+
+    Tabs.Main:AddSection("[ มีคีย์ ]")
+
+    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+        Title = "เลือกสคริปต์ที่ต้องการ",
+        Values = ScriptK,
+        Multi = false,
+        Default = nil,
+    })
+
+    --Dropdown:SetValue("four")
+
+    Dropdown:OnChanged(function(Value)
+        ScriptsK = Value
+    end)
+
+    Tabs.Main:AddButton({
+        Title = "กดเพื่อรันสคริปต์",
+        Description = "",
+        Callback = function()
+            if ScriptsK == "Lunor" then
+                loadstring(game:HttpGet("https://lunor.dev/loader"))()
+            elseif ScriptsK == "Bonk Hub" then
+                loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
+            elseif ScriptsK == "Native" then
+                (loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
+            elseif ScriptsK == "H4xScript" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader2.lua"))()
+            elseif ScriptsK == "Forge Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Skzuppy/forge-hub/main/loader.lua"))()
+            elseif ScriptsK == "Mercenaries" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/kosowa/asd/refs/heads/main/GaG.lua"))()
+            elseif ScriptsK == "DrRox Hub" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/BrySadW/GrowAGarden/refs/heads/main/GrowAGarden.lua"))()
+            elseif ScriptsK == "Space Hub" then
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/ago106/SpaceHub/refs/heads/main/Multi'))()
+            elseif ScriptsK == "ComboChronicle Vault" then
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/checkurasshole/Script/refs/heads/main/IQ'))();
+            end
+        end
+    })
+
+    Tabs.Contact:AddSection("[ Discord ]")
+
+    Tabs.Contact:AddParagraph({
+        Title = "ข้อความจากผู้สร้าง",
+        Content = "สคริปต์ไหนไม่สามรถรันได้โปรดแจ้งได้ที่ Discord ด่านล่าง"
+    })
+
+    Tabs.Contact:AddButton({
+        Title = "กดเพื่อคัดลอกลิ้งค์ Discord",
+        Description = "",
+        Callback = function()
+            setclipboard("https://discord.gg/yt-rocket")
+        end
+    })
+end
+
+
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("Ghost Hub")
+SaveManager:SetFolder("GhostHub/specific-game")
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+-- SaveManager:BuildConfigSection(Tabs.Settings)
+Window:SelectTab(1)
+
+local CoreGui = game:GetService("CoreGui")
+local logoGui = Instance.new("ScreenGui")
+
+logoGui.Name = "GhostHub"
+logoGui.ResetOnSpawn = false
+logoGui.Parent = CoreGui.ScreenGui
+
+local logoButton = Instance.new("ImageButton")
+logoButton.Name = "LogoButton"
+logoButton.Size = UDim2.new(0, 70, 0, 70)
+logoButton.Position = UDim2.new(0, 65, 0, 50)
+logoButton.BackgroundTransparency = 1
+logoButton.Image = "rbxassetid://96080169937759"
+logoButton.Parent = logoGui
+logoButton.ZIndex = 999
+
+local isOpen = true
+
+logoButton.MouseButton1Click:Connect(function()
+    isOpen = not isOpen
+    local fluentGui = CoreGui:FindFirstChild("ScreenGui")
+    if fluentGui then
+        fluentGui.Enabled = isOpen
+    end
+end)
+
+SaveManager:LoadAutoloadConfig()
