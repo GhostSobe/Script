@@ -1,6 +1,6 @@
 repeat task.wait() until game:IsLoaded()
 if _G.Thai == true then
-    https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/GrowaGardenThai
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/GrowaGardenThai"))()
 else
-    https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/GrowaGraden
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/GrowaGraden"))()
 end
