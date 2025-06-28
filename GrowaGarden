@@ -2,7 +2,7 @@
 # Credit
 Open Source
 Contect Me Here
-Made By : Moon [UserIdDc : <@754329983861784588>]
+Made By : SnowMoon [UserIdDc : <@754329983861784588>]
 Discord Me : https://discord.gg/QDaSPxtsDJ
 Discord Rocket : https://discord.gg/yt-rocket
 ]]
@@ -13,7 +13,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Fluent:CreateWindow({
     Title = "Rocket | All Scripts | Grow a Garden |",
-    SubTitle = "by Moon",
+    SubTitle = "by SnowMoon",
     TabWidth = 160,
     Size = UDim2.fromOffset(550, 350),
     Acrylic = false,
