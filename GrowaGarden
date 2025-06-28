@@ -3,22 +3,28 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "Rocket | Grow a Garden |",
+    Title = "Rocket | All Scripts | Grow a Garden |",
     SubTitle = "by Moon",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
-    Acrylic = false, 
+    Acrylic = false,
     Theme = "Amethyst",
     MinimizeKey = Enum.KeyCode.LeftControl
 })
 
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "crown" }),
+    TP = Window:AddTab({ Title = "Teleport", Icon = "map-pin" }),
     Contact = Window:AddTab({ Title = "Contact", Icon = "contact" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
-local Options = Fluent.Options
+--local Options = Fluent.Options
+
+
+local Plr = game:GetService("Players")
+local LocalPlr = Plr.LocalPlayer
+local StarterGui = game:GetService("StarterGui")
 
 local Script = {
     "Speed Hub",
@@ -37,8 +43,8 @@ local Script = {
 local ScriptK = {
     "Lunor",
     "Bonk Hub",
-    "Native",
     "H4xScript",
+    "Rifton",
     "Forge Hub",
     "Mercenaries",
     "DrRox Hub",
@@ -67,7 +73,18 @@ do
         Description = "",
         Callback = function()
             if Scripts == "Speed Hub" then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
+            --    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
+                StarterGui:SetCore("SendNotification", {
+                    Title = "System",
+                    Text = "Speed Hub ไม่มารถใช้งานได้",
+                    Duration = 5,
+                })
+                task.wait(3)
+                StarterGui:SetCore("SendNotification", {
+                    Title = "System",
+                    Text = "โปรดลองอีกครั้งภายหลัง",
+                    Duration = 5,
+                })
             elseif Scripts == "Nat Hub" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
             elseif Scripts == "No-Lag Hub" then
@@ -115,10 +132,10 @@ do
                 loadstring(game:HttpGet("https://lunor.dev/loader"))()
             elseif ScriptsK == "Bonk Hub" then
                 loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
-            elseif ScriptsK == "Native" then
-                (loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
             elseif ScriptsK == "H4xScript" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader2.lua"))()
+            elseif ScriptsK == "Rifton" then
+                loadstring(game:HttpGet("https://rifton.top/loader.lua"))()
             elseif ScriptsK == "Forge Hub" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Skzuppy/forge-hub/main/loader.lua"))()
             elseif ScriptsK == "Mercenaries" then
@@ -133,7 +150,45 @@ do
         end
     })
 
+    
+    Tabs.TP:AddButton({
+        Title = "Teleport To Shop Seeds",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(86.5790176, 2.99999976, -27.0039711, 0.00114052149, -4.75095341e-08, -0.999999344, -1.16310509e-12, 1, -4.75095661e-08, 0.999999344, 5.53487881e-11, 0.00114052149)
+        end
+    })
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Sell Fruit",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(86.5775986, 2.99999976, 0.426796287, 0.00179104181, 3.03747143e-08, -0.999998391, 3.23043079e-13, 1, 3.03747605e-08, 0.999998391, -5.47255123e-11, 0.00179104181)
+        end
+    })
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Shop Egg",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-282.938812, 2.99999976, 3.86399388, -0.0150365653, 6.56755184e-09, 0.99988693, -6.762167e-08, 1, -7.58520713e-09, -0.99988693, -6.77280809e-08, -0.0150365653)
+        end
+    })
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Shop Gear",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-286.245758, 2.99999976, -14.0936031, -0.0132383211, -2.78008976e-08, 0.999912381, -5.67098191e-09, 1, 2.77282535e-08, -0.999912381, -5.30340971e-09, -0.0132383211)
+        end
+    })
+
     Tabs.Contact:AddSection("[ Discord ]")
+
+    Tabs.Contact:AddParagraph({
+        Title = "System",
+        Content = "สคริปต์ไหนไม่สามรถรันได้โปรดแจ้งได้ที่ Discord ด่านล่าง"
+    })
 
     Tabs.Contact:AddButton({
         Title = "Click to Copy Discord Link",
@@ -150,7 +205,7 @@ InterfaceManager:SetLibrary(Fluent)
 SaveManager:IgnoreThemeSettings()
 SaveManager:SetIgnoreIndexes({})
 InterfaceManager:SetFolder("Ghost Hub")
-SaveManager:SetFolder("GhostHub/specific-game")
+SaveManager:SetFolder("Ghost-Hub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 -- SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
@@ -171,7 +226,8 @@ logoButton.Image = "rbxassetid://96080169937759"
 logoButton.Parent = logoGui
 logoButton.ZIndex = 999
 logoButton.MouseButton1Click:Connect(function()
-    CoreGui.ScreenGui:GetChildren()[2].Visible = not CoreGui.ScreenGui:GetChildren()[2].Visible  
+    CoreGui.ScreenGui:GetChildren()[2].Visible = not CoreGui.ScreenGui:GetChildren()[2].Visible
 end)
 
 SaveManager:LoadAutoloadConfig()
+
