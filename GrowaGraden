@@ -170,15 +170,8 @@ logoButton.BackgroundTransparency = 1
 logoButton.Image = "rbxassetid://96080169937759"
 logoButton.Parent = logoGui
 logoButton.ZIndex = 999
-
-local isOpen = true
-
 logoButton.MouseButton1Click:Connect(function()
-    isOpen = not isOpen
-    local fluentGui = CoreGui:FindFirstChild("ScreenGui")
-    if fluentGui then
-        fluentGui.Enabled = isOpen
-    end
+    CoreGui.ScreenGui:GetChildren()[2].Visible = not CoreGui.ScreenGui:GetChildren()[2].Visible  
 end)
 
 SaveManager:LoadAutoloadConfig()
