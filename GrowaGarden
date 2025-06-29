@@ -33,7 +33,7 @@ local LocalPlr = Plr.LocalPlayer
 local StarterGui = game:GetService("StarterGui")
 
 local Script = {
-    "Speed Hub",
+    --"Speed Hub",
     "Nat Hub",
     "No-Lag Hub",
     "AvOnTop",
@@ -48,6 +48,7 @@ local Script = {
 }
 
 local ScriptK = {
+    "Speed Hub",
     "Lunor",
     "Bonk Hub",
     "H4xScript",
@@ -74,7 +75,7 @@ do
         Title = "Notification",
         Content = "ยินดีต้อนรับสู่คริปต์ของเรา ขอบคุณที่ใช้",
         SubContent = "",
-        Duration = 3
+        Duration = 5
     })
 
     Tabs.Main:AddSection("[ Nokey / ไม่มีคีย์ ]")
@@ -96,9 +97,9 @@ do
         Title = "Click To Execute",
         Description = "กดเพื่อรันสคริปต์",
         Callback = function()
-            if Scripts == "Speed Hub" then
-               loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
-            elseif Scripts == "Nat Hub" then
+            -- if Scripts == "Speed Hub" then
+            --    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
+            if Scripts == "Nat Hub" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
             elseif Scripts == "No-Lag Hub" then
                 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV2.lua"))()
@@ -159,7 +160,9 @@ do
         Title = "Click To Execute",
         Description = "กดเพื่อรันสคริปต์",
         Callback = function()
-            if ScriptsK == "Lunor" then
+            if ScriptsK == "Speed Hub" then
+               loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
+            elseif ScriptsK == "Lunor" then
                 loadstring(game:HttpGet("https://lunor.dev/loader"))()
             elseif ScriptsK == "Bonk Hub" then
                 loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
@@ -246,7 +249,7 @@ do
                     StarterGui:SetCore("SendNotification", {
                         Title = "System",
                         Text = "คุณได้เปิด AntiAfk แล้ว",
-                        Duration = 3,
+                        Duration = 4,
                     })
                 end
                 preventAFK()
