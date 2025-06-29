@@ -1,9 +1,5 @@
 --[[
-# Credit
-Open Source
-Contect Me Here
-Made By : SnowMoon [UserIdDc : <@754329983861784588>]
-Discord Me : https://discord.gg/QDaSPxtsDJ
+เครดิต : SnowMoon UserIdDiscord <@754329983861784588>
 Discord Rocket : https://discord.gg/yt-rocket
 ]]
 
@@ -40,6 +36,7 @@ local Script = {
     "Speed Hub",
     "Nat Hub",
     "No-Lag Hub",
+    "AvOnTop",
     "Jimi Hub",
     "Black Hub",
     "Depthso",
@@ -47,7 +44,7 @@ local Script = {
     "Mauscripts",
     "Xerox Hub",
     "Gumanba",
-    "Somtank"
+    "Somtank",
 }
 
 local ScriptK = {
@@ -60,6 +57,15 @@ local ScriptK = {
     "DrRox Hub",
     "Space Hub",
     "ComboChronicle Vault",
+}
+
+local Other = {
+    "Infinite Yield",
+    "Cobalt Remote",
+    "Hydroxide Remote",
+    "Fly",
+    "UNC",
+    "Console",
 }
 
 do
@@ -87,7 +93,7 @@ do
 --------------------------------------------
     Tabs.Main:AddButton({
         Title = "Click To Execute",
-        Description = "",
+        Description = "กดเพื่อรันสคริปต์",
         Callback = function()
             if Scripts == "Speed Hub" then
                loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
@@ -95,6 +101,8 @@ do
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
             elseif Scripts == "No-Lag Hub" then
                 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV2.lua"))()
+            elseif Scripts == "AvOnTop" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Ayvathion/AV-On-Top/refs/heads/main/Loader.lua"))()
             elseif Scripts == "Jimi Hub" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/bunnnwee/JimiHub/refs/heads/main/GrowAGarden-Normal"))()
             elseif Scripts == "Black Hub" then
@@ -132,7 +140,7 @@ do
 
     Tabs.Main:AddButton({
         Title = "Click To Execute",
-        Description = "",
+        Description = "กดเพื่อรันสคริปต์",
         Callback = function()
             if ScriptsK == "Lunor" then
                 loadstring(game:HttpGet("https://lunor.dev/loader"))()
@@ -156,6 +164,48 @@ do
         end
     })
 
+    Tabs.Main:AddSection("[ Other / อื่นๆ ]")
+
+    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+        Title = "Select Scripts",
+        Values = Other,
+        Multi = false,
+        Default = nil,
+    })
+
+    --Dropdown:SetValue("four")
+
+    Dropdown:OnChanged(function(Value)
+        Others = Value
+    end)
+
+    Tabs.Main:AddButton({
+        Title = "Click To Execute",
+        Description = "กดเพื่อรันสคริปต์",
+        Callback = function()
+            if Others == "Infinite Yield" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/infiniteyield"))()
+            elseif Others == "Cobalt Remote" then
+                loadstring(game:HttpGet("https://github.com/notpoiu/cobalt/releases/latest/download/Cobalt.luau"))()
+            elseif Others == "Hydroxide Remote" then
+                local owner = "Upbolt"
+                local branch = "revision"
+                local function webImport(file)
+                    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+                end
+                webImport("init")
+                webImport("ui/main")
+            elseif Others == "Fly" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/Fly"))()
+            elseif Others == "UNC" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/UNC"))()
+            elseif Others == "Console" then
+                StarterGui = cloneref(game:GetService("StarterGui"))
+                StarterGui:SetCore("DevConsoleVisible", true)
+            end
+        end
+    })
+
     Tabs.Plr:AddSection("[ Speed / ความเร็ว ]")
 
     local Input = Tabs.Plr:AddInput("Input", {
@@ -174,7 +224,7 @@ do
     end)
 
     Tabs.Plr:AddButton({
-        Title = "Click To Set Speed",
+        Title = "Set WalkSpeed",
         Description = "",
         Callback = function()
             LocalPlr.Character.Humanoid.WalkSpeed = Speed
@@ -187,8 +237,8 @@ do
         Title = "JumpPower",
         Default = "50",
         Placeholder = "",
-        Numeric = false, -- Only allows numbers
-        Finished = false, -- Only calls callback when you press enter
+        Numeric = false,
+        Finished = false,
         Callback = function(Value)
             Jump = Value
         end
@@ -199,7 +249,7 @@ do
     end)
 
     Tabs.Plr:AddButton({
-        Title = "Click To Set JumpPower",
+        Title = "Set JumpPower",
         Description = "",
         Callback = function()
             LocalPlr.Character.Humanoid.JumpPower = Jump
@@ -256,10 +306,10 @@ do
 
     Tabs.Contact:AddSection("[ Discord ]")
 
-    Tabs.Contact:AddParagraph({
-        Title = "System",
-        Content = "สคริปต์ไหนไม่สามรถรันได้โปรดแจ้งได้ที่ Discord ด่านล่าง"
-    })
+    -- Tabs.Contact:AddParagraph({
+    --     Title = "System",
+    --     Content = "สคริปต์ไหนไม่สามรถรันได้โปรดแจ้งได้ที่ Discord ด่านล่าง"
+    -- })
 
     Tabs.Contact:AddButton({
         Title = "Copy Link Discord",
@@ -268,7 +318,7 @@ do
             setclipboard("https://discord.gg/yt-rocket")
             Fluent:Notify({
                 Title = "Notification",
-                Content = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดแล้ว",
+                Content = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดของคุณแล้ว",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
             })
@@ -319,9 +369,9 @@ Tabs.Settings:AddButton({
 local Input = Tabs.Settings:AddInput("Input", {
     Title = "JobId",
     Default = "",
-    Placeholder = "",
-    Numeric = false, -- Only allows numbers
-    Finished = false, -- Only calls callback when you press enter
+    Placeholder = "Enter JobId",
+    Numeric = false,
+    Finished = false, 
     Callback = function(Value)
         JobId = Value
     end
@@ -365,14 +415,12 @@ function dragify(Frame, object)
     local dragStart = nil
     local startPos = nil
 
-    -- ฟังก์ชันสำหรับอัปเดตตำแหน่ง
     local function updateInput(input)
         local Delta = input.Position - dragStart
         local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
         game:GetService("TweenService"):Create(object, TweenInfo.new(dragSpeed), {Position = Position}):Play()
     end
 
-    -- ตรวจจับการเริ่มต้นการลาก
     Frame.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
             dragToggle = true
@@ -386,14 +434,12 @@ function dragify(Frame, object)
         end
     end)
 
-    -- ตรวจจับการเปลี่ยนแปลงของ input
     Frame.InputChanged:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
             dragInput = input
         end
     end)
 
-    -- อัปเดตตำแหน่งเมื่อ input เปลี่ยน
     game:GetService("UserInputService").InputChanged:Connect(function(input)
         if input == dragInput and dragToggle then
             updateInput(input)
@@ -401,8 +447,6 @@ function dragify(Frame, object)
     end)
 end
 
-
 dragify(logoButton, logoButton)
 
 SaveManager:LoadAutoloadConfig()
-
