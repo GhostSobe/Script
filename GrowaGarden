@@ -304,6 +304,57 @@ do
         end
     })
 
+    Tabs.TP:AddSection("[ Garden ]")
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Garden 1",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(35.452713, 2.99999976, -61.251133, 0.999879122, -3.04142889e-09, 0.0155480979, 2.92904656e-09, 1, 7.25082128e-09, -0.0155480979, -7.20440374e-09, 0.999879122)
+        end
+    })
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Garden 2",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(33.072197, 2.99999976, 32.93713, -0.999997556, -1.1900358e-07, 0.00220724382, -1.1895856e-07, 1, 2.05263042e-08, -0.00220724382, 2.02636823e-08, -0.999997556)
+        end
+    })
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Garden 3",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-99.7253876, 2.99999976, -61.126049, 0.999851346, 7.23298088e-10, 0.0172424465, 1.11310694e-09, 1, -1.064953e-07, -0.0172424465, 1.06498661e-07, 0.999851346)
+        end
+    })
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Garden 4",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-102.946953, 2.99999976, 32.9636688, -0.999939084, 9.31523374e-08, 0.0110350214, 9.37552471e-08, 1, 5.41187752e-08, -0.0110350214, 5.51500712e-08, -0.999939084)
+        end
+    })
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Garden 5",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-235.370026, 2.99999976, -61.7729034, 0.999999106, -3.36821994e-11, 0.00133441552, -8.07662964e-13, 1, 2.58464183e-08, -0.00133441552, -2.5846397e-08, 0.999999106)
+        end
+    })
+
+    Tabs.TP:AddButton({
+        Title = "Teleport To Garden 6",
+        Description = "",
+        Callback = function()
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-236.828903, 2.99999976, 33.4977112, -0.999885559, 2.4698533e-08, -0.0151285492, 2.64145932e-08, 1, -1.13232097e-07, 0.0151285492, -1.13618754e-07, -0.999885559)
+        end
+    })
+
+
     Tabs.Contact:AddSection("[ Discord ]")
 
     -- Tabs.Contact:AddParagraph({
@@ -359,9 +410,9 @@ Tabs.Settings:AddButton({
         setclipboard(tostring(game.JobId))
         Fluent:Notify({
             Title = "Notification",
-            Content = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดแล้ว",
-            SubContent = "", -- Optional
-            Duration = 5 -- Set to nil to make the notification not disappear
+            Content = "ได้คัดลอก JobId ไปยังคีย์บอร์ดคุณแล้ว",
+            SubContent = "",
+            Duration = 5
         })
     end
 })
