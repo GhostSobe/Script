@@ -84,7 +84,7 @@ do
         Title = "Select Scripts",
         Values = Script,
         Multi = false,
-        Default = nil,
+        Default = "เลือกสคริปต์",
     })
 
     --Dropdown:SetValue("four")
@@ -147,7 +147,7 @@ do
         Title = "Select Scripts",
         Values = ScriptK,
         Multi = false,
-        Default = nil,
+        Default = "เลือกสคริปต์",
     })
 
     --Dropdown:SetValue("four")
@@ -206,7 +206,7 @@ do
         Title = "Select Scripts",
         Values = Other,
         Multi = false,
-        Default = nil,
+        Default = "เลือกสคริปต์",
     })
 
     --Dropdown:SetValue("four")
@@ -293,7 +293,7 @@ do
 
     Tabs.Plr:AddButton({
         Title = "Set WalkSpeed",
-        Description = "",
+        Description = "กดเพื่อเปลี่ยนสปีด",
         Callback = function()
             LocalPlr.Character.Humanoid.WalkSpeed = Speed
         end
@@ -318,7 +318,7 @@ do
 
     Tabs.Plr:AddButton({
         Title = "Set JumpPower",
-        Description = "",
+        Description = "กดเพื่อเปลี่ยนความกระโดดสูง",
         Callback = function()
             LocalPlr.Character.Humanoid.JumpPower = Jump
         end
@@ -326,7 +326,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Shop Seeds",
-        Description = "",
+        Description = "วาปไปที่ขายเมล็ด",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(86.5790176, 2.99999976, -27.0039711, 0.00114052149, -4.75095341e-08, -0.999999344, -1.16310509e-12, 1, -4.75095661e-08, 0.999999344, 5.53487881e-11, 0.00114052149)
         end
@@ -334,7 +334,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Sell Fruit",
-        Description = "",
+        Description = "วาปไปที่ขายผล",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(86.5775986, 2.99999976, 0.426796287, 0.00179104181, 3.03747143e-08, -0.999998391, 3.23043079e-13, 1, 3.03747605e-08, 0.999998391, -5.47255123e-11, 0.00179104181)
         end
@@ -342,7 +342,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Event",
-        Description = "",
+        Description = "วางไป Event ตรงกลาง",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-105.175873, 4.40001249, -7.93631935, 0.999894559, 4.99593078e-08, 0.0145212691, -5.10815248e-08, 1, 7.69099628e-08, -0.0145212691, -7.76436195e-08, 0.999894559)
         end
@@ -350,7 +350,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Shop Egg",
-        Description = "",
+        Description = "วาปไปที่ขายไข่",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-282.938812, 2.99999976, 3.86399388, -0.0150365653, 6.56755184e-09, 0.99988693, -6.762167e-08, 1, -7.58520713e-09, -0.99988693, -6.77280809e-08, -0.0150365653)
         end
@@ -358,7 +358,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Shop Gear",
-        Description = "",
+        Description = "วาปไปที่ขายอุปกรณ์",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-286.245758, 2.99999976, -14.0936031, -0.0132383211, -2.78008976e-08, 0.999912381, -5.67098191e-09, 1, 2.77282535e-08, -0.999912381, -5.30340971e-09, -0.0132383211)
         end
@@ -366,7 +366,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Cosmetics/Crafting",
-        Description = "",
+        Description = "วาปไปโต๊ะคราฟ",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-284.043976, 2.99999976, -31.5364285, 0.00415412895, 8.20995112e-08, 0.999991357, -4.49235849e-08, 1, -8.19136048e-08, -0.999991357, -4.45829187e-08, 0.00415412895)
         end
@@ -376,7 +376,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Garden 1",
-        Description = "",
+        Description = "วาปไปสวนที่ 1",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(35.452713, 2.99999976, -61.251133, 0.999879122, -3.04142889e-09, 0.0155480979, 2.92904656e-09, 1, 7.25082128e-09, -0.0155480979, -7.20440374e-09, 0.999879122)
         end
@@ -384,7 +384,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Garden 2",
-        Description = "",
+        Description = "วาปไปสวนที่ 2",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(33.072197, 2.99999976, 32.93713, -0.999997556, -1.1900358e-07, 0.00220724382, -1.1895856e-07, 1, 2.05263042e-08, -0.00220724382, 2.02636823e-08, -0.999997556)
         end
@@ -392,7 +392,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Garden 3",
-        Description = "",
+        Description = "วาปไปสวนที่ 3",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-99.7253876, 2.99999976, -61.126049, 0.999851346, 7.23298088e-10, 0.0172424465, 1.11310694e-09, 1, -1.064953e-07, -0.0172424465, 1.06498661e-07, 0.999851346)
         end
@@ -400,7 +400,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Garden 4",
-        Description = "",
+        Description = "วาปไปสวนที่ 4",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-102.946953, 2.99999976, 32.9636688, -0.999939084, 9.31523374e-08, 0.0110350214, 9.37552471e-08, 1, 5.41187752e-08, -0.0110350214, 5.51500712e-08, -0.999939084)
         end
@@ -408,7 +408,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Garden 5",
-        Description = "",
+        Description = "วาปไปสวนที่ 5",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-235.370026, 2.99999976, -61.7729034, 0.999999106, -3.36821994e-11, 0.00133441552, -8.07662964e-13, 1, 2.58464183e-08, -0.00133441552, -2.5846397e-08, 0.999999106)
         end
@@ -416,7 +416,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Garden 6",
-        Description = "",
+        Description = "วาปไปสวนที่ 6",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-236.828903, 2.99999976, 33.4977112, -0.999885559, 2.4698533e-08, -0.0151285492, 2.64145932e-08, 1, -1.13232097e-07, 0.0151285492, -1.13618754e-07, -0.999885559)
         end
@@ -432,7 +432,7 @@ do
 
     Tabs.Contact:AddButton({
         Title = "Copy Link Discord",
-        Description = "",
+        Description = "กดเพื่อคัดลอกลิ้งค์ดิสคอร์ด",
         Callback = function()
             setclipboard("https://discord.gg/yt-rocket")
             -- Fluent:Notify({
