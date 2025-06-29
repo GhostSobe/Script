@@ -383,11 +383,18 @@ do
         Description = "",
         Callback = function()
             setclipboard("https://discord.gg/yt-rocket")
-            Fluent:Notify({
-                Title = "Notification",
-                Content = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดของคุณแล้ว",
-                SubContent = "", -- Optional
-                Duration = 5 -- Set to nil to make the notification not disappear
+            -- Fluent:Notify({
+            --     Title = "Notification",
+            --     Content = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดของคุณแล้ว",
+            --     Icon = "rbxassetid://96080169937759",
+            --     SubContent = "",
+            --     Duration = 5
+            -- })
+            StarterGui:SetCore("SendNotification", {
+                Title = "System",
+                Icon = "rbxassetid://118974663345349",
+                Text = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดของคุณแล้ว",
+                Duration = 4,
             })
         end
     })
