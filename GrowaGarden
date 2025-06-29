@@ -394,7 +394,7 @@ local logoGui = Instance.new("ScreenGui")
 
 logoGui.Name = "GhostHub"
 logoGui.ResetOnSpawn = false
-logoGui.Parent = CoreGui.ScreenGui
+logoGui.Parent = CoreGui:WaitForChild("ScreenGui")
 
 local logoButton = Instance.new("ImageButton")
 logoButton.Name = "LogoButton"
