@@ -73,8 +73,8 @@ do
     Fluent:Notify({
         Title = "Notification",
         Content = "ยินดีต้อนรับสู่คริปต์ของเรา ขอบคุณที่ใช้",
-        SubContent = "", -- Optional
-        Duration = 5 -- Set to nil to make the notification not disappear
+        SubContent = "",
+        Duration = 3
     })
 
     Tabs.Main:AddSection("[ Nokey / ไม่มีคีย์ ]")
@@ -121,6 +121,22 @@ do
             elseif Scripts == "Somtank" then
                 loadstring(game:HttpGet('https://pastebin.com/raw/BjkuU1TV'))()
             end
+            if Scripts ~= nil then
+                task.wait(3)
+                Fluent:Notify({
+                    Title = "Notification",
+                    Content = "สคริปต์โหลดสำเร็จ",
+                    SubContent = "",
+                    Duration = 5
+                })
+            elseif Scripts == nil then
+                Fluent:Notify({
+                    Title = "Notification",
+                    Content = "คุณต้องเลือกสคริปต์ก่อนถึงจะรันได้",
+                    SubContent = "",
+                    Duration = 5
+                })
+            end
         end
     })
 
@@ -161,6 +177,22 @@ do
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/ago106/SpaceHub/refs/heads/main/Multi'))()
             elseif ScriptsK == "ComboChronicle Vault" then
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/checkurasshole/Script/refs/heads/main/IQ'))();
+            end
+            if ScriptsK ~= nil then
+                task.wait(3)
+                Fluent:Notify({
+                    Title = "Notification",
+                    Content = "สคริปต์โหลดสำเร็จ",
+                    SubContent = "",
+                    Duration = 5
+                })
+            elseif ScriptsK == nil then
+                Fluent:Notify({
+                    Title = "Notification",
+                    Content = "คุณต้องเลือกสคริปต์ก่อนถึงจะรันได้",
+                    SubContent = "",
+                    Duration = 5
+                })
             end
         end
     })
@@ -214,10 +246,27 @@ do
                     StarterGui:SetCore("SendNotification", {
                         Title = "System",
                         Text = "คุณได้เปิด AntiAfk แล้ว",
-                        Duration = 4,
+                        Duration = 3,
                     })
                 end
                 preventAFK()
+            --elseif
+            end
+            if Others ~= nil then
+                task.wait(3)
+                Fluent:Notify({
+                    Title = "Notification",
+                    Content = "สคริปต์โหลดสำเร็จ",
+                    SubContent = "",
+                    Duration = 5
+                })
+            elseif Others == nil then
+                Fluent:Notify({
+                    Title = "Notification",
+                    Content = "คุณต้องเลือกสคริปต์ก่อนถึงจะรันได้",
+                    SubContent = "",
+                    Duration = 5
+                })
             end
         end
     })
@@ -235,9 +284,9 @@ do
         end
     })
 
-    Input:OnChanged(function()
-        print("Set Speed :", Input.Value)
-    end)
+    -- Input:OnChanged(function()
+    --     print("Set Speed :", Input.Value)
+    -- end)
 
     Tabs.Plr:AddButton({
         Title = "Set WalkSpeed",
@@ -260,9 +309,9 @@ do
         end
     })
 
-    Input:OnChanged(function()
-        print("Set Speed :", Input.Value)
-    end)
+    -- Input:OnChanged(function()
+    --     print("Set Speed :", Input.Value)
+    -- end)
 
     Tabs.Plr:AddButton({
         Title = "Set JumpPower",
@@ -524,4 +573,3 @@ end
 dragify(logoButton, logoButton)
 
 SaveManager:LoadAutoloadConfig()
-
