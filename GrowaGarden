@@ -63,6 +63,7 @@ local Other = {
     "Infinite Yield",
     "Cobalt Remote",
     "Hydroxide Remote",
+    "AntiAfk",
     "Fly",
     "UNC",
     "Console",
@@ -202,6 +203,21 @@ do
             elseif Others == "Console" then
                 StarterGui = cloneref(game:GetService("StarterGui"))
                 StarterGui:SetCore("DevConsoleVisible", true)
+            elseif Others == "AntiAfk" then
+                local Players = game:GetService("Players")
+                local function preventAFK()
+                    local VirtualUser = cloneref(game:GetService("VirtualUser"))
+                    Players.LocalPlayer.Idled:Connect(function()
+                        VirtualUser:CaptureController()
+                        VirtualUser:ClickButton2(Vector2.new())
+                    end)
+                    StarterGui:SetCore("SendNotification", {
+                        Title = "System",
+                        Text = "คุณได้เปิด AntiAfk แล้ว",
+                        Duration = 4,
+                    })
+                end
+                preventAFK()
             end
         end
     })
@@ -501,3 +517,4 @@ end
 dragify(logoButton, logoButton)
 
 SaveManager:LoadAutoloadConfig()
+
