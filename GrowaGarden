@@ -1,4 +1,5 @@
 --[[
+Open Source
 เครดิต : SnowMoon UserIdDiscord <@754329983861784588>
 Discord Rocket : https://discord.gg/yt-rocket
 ]]
@@ -37,6 +38,7 @@ local Script = {
     "Nat Hub",
     "No-Lag Hub",
     "AvOnTop",
+    "Thunder Z",
     "Jimi Hub",
     "Black Hub",
     "Depthso",
@@ -121,6 +123,8 @@ do
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden", true))()
             elseif Scripts == "Somtank" then
                 loadstring(game:HttpGet('https://pastebin.com/raw/BjkuU1TV'))()
+            elseif Scripts == "Thunder Z" then
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/ThundarZ/Welcome/refs/heads/main/Main/GaG/Main.lua'))()
             end
             if Scripts ~= nil then
                 task.wait(3)
@@ -452,7 +456,6 @@ do
     })
 
 end
-
 
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
