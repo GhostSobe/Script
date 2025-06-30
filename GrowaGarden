@@ -345,7 +345,7 @@ do
 
     Tabs.TP:AddButton({
         Title = "Teleport To Event",
-        Description = "วางไป Event ตรงกลาง",
+        Description = "วาปไป Event ตรงกลาง",
         Callback = function()
             LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-105.175873, 4.40001249, -7.93631935, 0.999894559, 4.99593078e-08, 0.0145212691, -5.10815248e-08, 1, 7.69099628e-08, -0.0145212691, -7.76436195e-08, 0.999894559)
         end
@@ -465,9 +465,6 @@ SaveManager:SetFolder("Ghost Hub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 -- SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
-
-delfolder("Ghost-Hub")
-delfolder("FluentScriptHub")
 
 -- Tabs.Settings:AddButton({
 --     Title = "Copy PlaceId",
