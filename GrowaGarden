@@ -1,5 +1,4 @@
 --[[
-Open Source
 เครดิต : SnowMoon UserIdDiscord <@754329983861784588>
 Discord Rocket : https://discord.gg/yt-rocket
 ]]
@@ -462,10 +461,13 @@ InterfaceManager:SetLibrary(Fluent)
 SaveManager:IgnoreThemeSettings()
 SaveManager:SetIgnoreIndexes({})
 InterfaceManager:SetFolder("Ghost Hub")
-SaveManager:SetFolder("Ghost-Hub/specific-game")
+SaveManager:SetFolder("Ghost Hub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 -- SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
+
+delfolder("Ghost-Hub")
+delfolder("FluentScriptHub")
 
 -- Tabs.Settings:AddButton({
 --     Title = "Copy PlaceId",
