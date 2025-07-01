@@ -125,22 +125,6 @@ do
             elseif Scripts == "Thunder Z" then
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/ThundarZ/Welcome/refs/heads/main/Main/GaG/Main.lua'))()
             end
-            if Scripts ~= nil then
-                task.wait(3)
-                Fluent:Notify({
-                    Title = "Notification",
-                    Content = "สคริปต์โหลดสำเร็จ",
-                    SubContent = "",
-                    Duration = 5
-                })
-            elseif Scripts == nil then
-                Fluent:Notify({
-                    Title = "Notification",
-                    Content = "คุณต้องเลือกสคริปต์ก่อนถึงจะรันได้",
-                    SubContent = "",
-                    Duration = 5
-                })
-            end
         end
     })
 
@@ -183,22 +167,6 @@ do
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/ago106/SpaceHub/refs/heads/main/Multi'))()
             elseif ScriptsK == "ComboChronicle Vault" then
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/checkurasshole/Script/refs/heads/main/IQ'))();
-            end
-            if ScriptsK ~= nil then
-                task.wait(3)
-                Fluent:Notify({
-                    Title = "Notification",
-                    Content = "สคริปต์โหลดสำเร็จ",
-                    SubContent = "",
-                    Duration = 5
-                })
-            elseif ScriptsK == nil then
-                Fluent:Notify({
-                    Title = "Notification",
-                    Content = "คุณต้องเลือกสคริปต์ก่อนถึงจะรันได้",
-                    SubContent = "",
-                    Duration = 5
-                })
             end
         end
     })
@@ -257,22 +225,6 @@ do
                 end
                 preventAFK()
             --elseif
-            end
-            if Others ~= nil then
-                task.wait(3)
-                Fluent:Notify({
-                    Title = "Notification",
-                    Content = "สคริปต์โหลดสำเร็จ",
-                    SubContent = "",
-                    Duration = 5
-                })
-            elseif Others == nil then
-                Fluent:Notify({
-                    Title = "Notification",
-                    Content = "คุณต้องเลือกสคริปต์ก่อนถึงจะรันได้",
-                    SubContent = "",
-                    Duration = 5
-                })
             end
         end
     })
