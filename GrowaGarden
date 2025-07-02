@@ -472,16 +472,17 @@ Tabs.Settings:AddButton({
 local CoreGui = game:GetService("CoreGui")
 local logoGui = Instance.new("ScreenGui")
 
+task.wait(0.5)
 logoGui.Name = "GhostHub"
 logoGui.ResetOnSpawn = false
 logoGui.Parent = CoreGui.ScreenGui
 
 local logoButton = Instance.new("ImageButton")
 logoButton.Name = "LogoButton"
-logoButton.Size = UDim2.new(0, 70, 0, 70)
+logoButton.Size = UDim2.new(0, 55, 0, 55)
 logoButton.Position = UDim2.new(0, 65, 0, 50)
 logoButton.BackgroundTransparency = 1
-logoButton.Image = "rbxassetid://96080169937759"
+logoButton.Image = "rbxassetid://118974663345349"
 logoButton.Parent = logoGui
 logoButton.ZIndex = 999
 logoButton.MouseButton1Click:Connect(function()
