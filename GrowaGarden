@@ -246,16 +246,13 @@ do
         --print("Set Speed :", Input.Value)
     end)
     
-    local Toggle = Tabs.Plr:AddToggle("MyToggle", {Title = "Set Speed", Default = false })
-
-    Toggle:OnChanged(function(v)
-        _G.S = v
-        while _G.S do task.wait()
+    Tabs.Plr:AddButton({
+        Title = "Set WalkSpeed",
+        Description = "กดเพื่อเปลี่ยนความเร็ว",
+        Callback = function()
             LocalPlr.Character.Humanoid.WalkSpeed = Speed
         end
-    end)
-
-    Options.MyToggle:SetValue(false)
+    })
 
     Tabs.Plr:AddSection("[ Jump / กระโดด ]")
 
@@ -274,14 +271,13 @@ do
         --print("Set Speed :", Input.Value)
     end)
 
-    local Toggle = Tabs.Plr:AddToggle("MyToggle", {Title = "Set Jump", Default = false })
-
-    Toggle:OnChanged(function(v)
-        _G.J = v
-        while _G.J do task.wait()
+    Tabs.Plr:AddButton({
+        Title = "Set JumpPower",
+        Description = "กดเพื่อเปลี่ยนพลังกระโดด",
+        Callback = function()
             LocalPlr.Character.Humanoid.JumpPower = Jump
         end
-    end)
+    })
 
     Tabs.TP:AddButton({
         Title = "Teleport To Shop Seeds",
