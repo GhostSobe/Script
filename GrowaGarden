@@ -10,7 +10,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 local Window = Fluent:CreateWindow({
     Title = "Rocket | All Scripts | Grow a Garden |",
     SubTitle = "by SnowMoon",
-    TabWidth = 150,
+    TabWidth = 160,
     Size = UDim2.fromOffset(550, 350),
     Acrylic = false,
     Theme = "Amethyst",
@@ -245,14 +245,17 @@ do
     -- Input:OnChanged(function()
     --     print("Set Speed :", Input.Value)
     -- end)
+    
+    local Toggle = Tabs.Plr:AddToggle("MyToggle", {Title = "Set Speed", Default = false })
 
-    Tabs.Plr:AddButton({
-        Title = "Set WalkSpeed",
-        Description = "กดเพื่อเปลี่ยนสปีด",
-        Callback = function()
+    Toggle:OnChanged(function(v)
+        _G.S = v
+        while _G.S do task.wait()
             LocalPlr.Character.Humanoid.WalkSpeed = Speed
         end
-    })
+    end)
+
+    Options.MyToggle:SetValue(false)
 
     Tabs.Plr:AddSection("[ Jump / กระโดด ]")
 
@@ -271,13 +274,14 @@ do
     --     print("Set Speed :", Input.Value)
     -- end)
 
-    Tabs.Plr:AddButton({
-        Title = "Set JumpPower",
-        Description = "กดเพื่อเปลี่ยนความกระโดดสูง",
-        Callback = function()
+    local Toggle = Tabs.Plr:AddToggle("MyToggle", {Title = "Set Jump", Default = false })
+
+    Toggle:OnChanged(function(v)
+        _G.J = v
+        while _G.J do task.wait()
             LocalPlr.Character.Humanoid.JumpPower = Jump
         end
-    })
+    end)
 
     Tabs.TP:AddButton({
         Title = "Teleport To Shop Seeds",
@@ -458,7 +462,7 @@ local Input = Tabs.Settings:AddInput("Input", {
 })
 
 Input:OnChanged(function()
-    print("TP JobId :", Input.Value)
+    --print("TP JobId :", Input.Value)
 end)
 
 Tabs.Settings:AddButton({
@@ -472,7 +476,6 @@ Tabs.Settings:AddButton({
 local CoreGui = game:GetService("CoreGui")
 local logoGui = Instance.new("ScreenGui")
 
-task.wait(0.5)
 logoGui.Name = "GhostHub"
 logoGui.ResetOnSpawn = false
 logoGui.Parent = CoreGui.ScreenGui
