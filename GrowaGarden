@@ -386,7 +386,7 @@ do
     -- })
 
     Tabs.Contact:AddButton({
-        Title = "Copy Link Discord",
+        Title = "Discord Invite",
         Description = "กดเพื่อคัดลอกลิ้งค์ดิสคอร์ด",
         Callback = function()
             setclipboard("https://discord.gg/yt-rocket")
