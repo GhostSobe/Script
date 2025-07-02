@@ -242,9 +242,9 @@ do
         end
     })
 
-    -- Input:OnChanged(function()
-    --     print("Set Speed :", Input.Value)
-    -- end)
+    Input:OnChanged(function()
+        --print("Set Speed :", Input.Value)
+    end)
     
     local Toggle = Tabs.Plr:AddToggle("MyToggle", {Title = "Set Speed", Default = false })
 
@@ -270,9 +270,9 @@ do
         end
     })
 
-    -- Input:OnChanged(function()
-    --     print("Set Speed :", Input.Value)
-    -- end)
+    Input:OnChanged(function()
+        --print("Set Speed :", Input.Value)
+    end)
 
     local Toggle = Tabs.Plr:AddToggle("MyToggle", {Title = "Set Jump", Default = false })
 
