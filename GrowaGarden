@@ -36,6 +36,7 @@ local Script = {
     --"Speed Hub",
     "Nat Hub",
     "No-Lag Hub",
+    "Bonk Hub",
     "AvOnTop",
     "Thunder Z",
     "Jimi Hub",
@@ -51,7 +52,7 @@ local Script = {
 local ScriptK = {
     "Speed Hub",
     "Lunor",
-    "Bonk Hub",
+    --"Bonk Hub",
     "H4xScript",
     "Rifton",
     "Forge Hub",
@@ -124,6 +125,8 @@ do
                 loadstring(game:HttpGet('https://pastebin.com/raw/BjkuU1TV'))()
             elseif Scripts == "Thunder Z" then
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/ThundarZ/Welcome/refs/heads/main/Main/GaG/Main.lua'))()
+            elseif Scripts == "Bonk Hub" then
+                loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
             end
         end
     })
@@ -151,8 +154,8 @@ do
                loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
             elseif ScriptsK == "Lunor" then
                 loadstring(game:HttpGet("https://lunor.dev/loader"))()
-            elseif ScriptsK == "Bonk Hub" then
-                loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
+            -- elseif ScriptsK == "Bonk Hub" then
+            --     loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
             elseif ScriptsK == "H4xScript" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader2.lua"))()
             elseif ScriptsK == "Rifton" then
