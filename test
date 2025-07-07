@@ -37,8 +37,9 @@ local Script = {
     --"Nat Hub",
     "No-Lag Hub",
     "Bonk Hub",
-    "AvOnTop",
     "Thunder Z",
+    "AvOnTop",
+    "Fetching's Hub",
     "Jimi Hub",
     "Black Hub",
     "Depthso",
@@ -129,6 +130,8 @@ do
                 loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
             -- elseif Scripts == "Speed Hub" then
             --    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
+            elseif Scripts == "Fetching's Hub" then
+                loadstring(game:HttpGet('https://github.com/96soul/-/blob/main/load.gg?raw=true', true))();
             end
         end
     })
