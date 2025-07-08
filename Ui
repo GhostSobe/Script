@@ -15,16 +15,16 @@ local httpService = game:GetService("HttpService")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
--- local Mobile
--- if RunService:IsStudio() then
--- 	Mobile = false
--- else
--- 	Mobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, UserInputService:GetPlatform()) ~= nil
--- end
+local Mobile
+if RunService:IsStudio() then
+	Mobile = false
+else
+	Mobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, UserInputService:GetPlatform()) ~= nil
+end
 
--- if Show_Button then
--- 	Mobile = true
--- end
+if Show_Button then
+	Mobile = false
+end
 
 local fischbypass
 
@@ -3468,44 +3468,44 @@ Components.Window = (function()
 			end
 		end)
 
-		-- function Window:Minimize()
-		-- 	Window.Minimized = not Window.Minimized
-		-- 	Window.Root.Visible = not Window.Minimized
-		-- 	if not MinimizeNotif then
-		-- 		MinimizeNotif = true
-		-- 		local Key = Library.MinimizeKeybind and Library.MinimizeKeybind.Value or Library.MinimizeKey.Name
-		-- 		if not Mobile then Library:Notify({
-		-- 			Title = "Interface",
-		-- 			Content = "Press " .. Key .. " to toggle the interface.",
-		-- 			Duration = 6
-		-- 			})
-		-- 		else 
-		-- 			Library:Notify({
-		-- 				Title = "Interface",
-		-- 				Content = "Tap to the button to toggle the interface.",
-		-- 				Duration = 6
-		-- 			})
-		-- 		end
-		-- 	end
-		-- 	if not RunService:IsStudio() and Mobile and Minimizer then
-		-- 		pcall(function()
-		-- 			local minimizeButton = Minimizer:FindFirstChild("Frame"):FindFirstChild("TextButton")
-		-- 			if minimizeButton then
-		-- 				local imageLabel = minimizeButton:FindFirstChild("ImageLabel")
-		-- 				if imageLabel then
-		-- 					imageLabel.Image = Window.Minimized and "rbxassetid://10734896384" or "rbxassetid://10734897102"
-		-- 				end
-		-- 			end
-		-- 		end)
-		-- 	end
-		-- end
+		function Window:Minimize()
+			Window.Minimized = not Window.Minimized
+			Window.Root.Visible = not Window.Minimized
+			if not MinimizeNotif then
+				MinimizeNotif = true
+				local Key = Library.MinimizeKeybind and Library.MinimizeKeybind.Value or Library.MinimizeKey.Name
+				if not Mobile then Library:Notify({
+					Title = "Interface",
+					Content = "Press " .. Key .. " to toggle the interface.",
+					Duration = 6
+					})
+				else 
+					Library:Notify({
+						Title = "Interface",
+						Content = "Tap to the button to toggle the interface.",
+						Duration = 6
+					})
+				end
+			end
+			if not RunService:IsStudio() and Mobile and Minimizer then
+				pcall(function()
+					local minimizeButton = Minimizer:FindFirstChild("Frame"):FindFirstChild("TextButton")
+					if minimizeButton then
+						local imageLabel = minimizeButton:FindFirstChild("ImageLabel")
+						if imageLabel then
+							imageLabel.Image = Window.Minimized and "rbxassetid://10734896384" or "rbxassetid://10734897102"
+						end
+					end
+				end)
+			end
+		end
 
-		-- function Window:Destroy()
-		-- 	if Library.UseAcrylic then
-		-- 		Window.AcrylicPaint.Model:Destroy()
-		-- 	end
-		-- 	Window.Root:Destroy()
-		-- end
+		function Window:Destroy()
+			if Library.UseAcrylic then
+				Window.AcrylicPaint.Model:Destroy()
+			end
+			Window.Root:Destroy()
+		end
 
 		local DialogModule = Components.Dialog:Init(Window)
 		function Window:Dialog(Config)
@@ -6724,75 +6724,75 @@ else
 	Fluent = Library
 end
 
--- local MinimizeButton = New("TextButton", {
--- 	BackgroundTransparency = 1,
--- 	Size = UDim2.new(1, 0, 1, 0),
--- 	BorderSizePixel = 0
--- }, {
--- 	New("UIPadding", {
--- 		PaddingBottom = UDim.new(0, 2),
--- 		PaddingLeft = UDim.new(0, 2),
--- 		PaddingRight = UDim.new(0, 2),
--- 		PaddingTop = UDim.new(0, 2),
--- 	}),
--- 	New("ImageLabel", {
--- 		Image = Mobile and (Button_Icon ~= "" and Button_Icon or "rbxassetid://10734897102") or "rbxassetid://10734897102",
--- 		Size = UDim2.new(1, 0, 1, 0),
--- 		BackgroundTransparency = 1,
--- 	}, {
--- 		New("UIAspectRatioConstraint", {
--- 			AspectRatio = 1,
--- 			AspectType = Enum.AspectType.FitWithinMaxSize,
--- 		})
--- 	})
--- })
+local MinimizeButton = New("TextButton", {
+	BackgroundTransparency = 1,
+	Size = UDim2.new(1, 0, 1, 0),
+	BorderSizePixel = 0
+}, {
+	New("UIPadding", {
+		PaddingBottom = UDim.new(0, 2),
+		PaddingLeft = UDim.new(0, 2),
+		PaddingRight = UDim.new(0, 2),
+		PaddingTop = UDim.new(0, 2),
+	}),
+	New("ImageLabel", {
+		Image = Mobile and (Button_Icon ~= "" and Button_Icon or "rbxassetid://10734897102") or "rbxassetid://10734897102",
+		Size = UDim2.new(1, 0, 1, 0),
+		BackgroundTransparency = 1,
+	}, {
+		New("UIAspectRatioConstraint", {
+			AspectRatio = 1,
+			AspectType = Enum.AspectType.FitWithinMaxSize,
+		})
+	})
+})
 
 local Minimizer
 
--- if Mobile then
--- 	Minimizer = New("Frame", {
--- 		Parent = GUI,
--- 		Size = UDim2.new(0.08, 1, 0.1642, 1),
--- 		Position = UDim2.new(0.45, 0, 0.025, 0),
--- 		BackgroundTransparency = 1,
--- 		ZIndex = 999999999,
--- 	},
--- 	{
--- 		New("Frame", {
--- 			BackgroundColor3 = Color3.fromRGB(0, 0, 0),
--- 			Size = UDim2.new(1, 0, 1, 0),
--- 			BackgroundTransparency = 0.5,
--- 			BorderSizePixel = 0
--- 		}, {
--- 			New("UICorner", {
--- 				CornerRadius = UDim.new(0.25, 0),
--- 			}),
--- 			MinimizeButton
--- 		})
--- 	})
--- else
--- 	Minimizer = New("Frame", {
--- 		Parent = GUI,
--- 		Size = UDim2.new(0, 0, 0, 0),
--- 		Position = UDim2.new(0.45, 0, 0.025, 0),
--- 		BackgroundTransparency = 1,
--- 		ZIndex = 999999999,
--- 		Visible = false
--- 	},
--- 	{
--- 		New("Frame", {
--- 			BackgroundColor3 = Color3.fromRGB(0, 0, 0),
--- 			Size = UDim2.new(0, 0, 0, 0),
--- 			BackgroundTransparency = 0,
--- 			BorderSizePixel = 0
--- 		}, {
--- 			New("UICorner", {
--- 				CornerRadius = UDim.new(0.25, 0),
--- 			}),
--- 			MinimizeButton
--- 		})
--- 	})
--- end
+if Mobile then
+	Minimizer = New("Frame", {
+		Parent = GUI,
+		Size = UDim2.new(0.08, 1, 0.1642, 1),
+		Position = UDim2.new(0.45, 0, 0.025, 0),
+		BackgroundTransparency = 1,
+		ZIndex = 999999999,
+	},
+	{
+		New("Frame", {
+			BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+			Size = UDim2.new(1, 0, 1, 0),
+			BackgroundTransparency = 0.5,
+			BorderSizePixel = 0
+		}, {
+			New("UICorner", {
+				CornerRadius = UDim.new(0.25, 0),
+			}),
+			MinimizeButton
+		})
+	})
+else
+	Minimizer = New("Frame", {
+		Parent = GUI,
+		Size = UDim2.new(0, 0, 0, 0),
+		Position = UDim2.new(0.45, 0, 0.025, 0),
+		BackgroundTransparency = 1,
+		ZIndex = 999999999,
+		Visible = false
+	},
+	{
+		New("Frame", {
+			BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+			Size = UDim2.new(0, 0, 0, 0),
+			BackgroundTransparency = 0,
+			BorderSizePixel = 0
+		}, {
+			New("UICorner", {
+				CornerRadius = UDim.new(0.25, 0),
+			}),
+			MinimizeButton
+		})
+	})
+end
 
 Creator.AddSignal(Minimizer.InputBegan, function(Input)
 	if
@@ -6858,10 +6858,10 @@ Creator.AddSignal(UserInputService.InputChanged, function(Input)
 	end
 end)
 
--- AddSignal(MinimizeButton.MouseButton1Click, function()
--- 	Library.Window:Minimize()
--- end)
+AddSignal(MinimizeButton.MouseButton1Click, function()
+	Library.Window:Minimize()
+end)
 
 task.wait(0.01)
 
-return Library, SaveManager, InterfaceManager -- Mobile
+return Library, SaveManager, InterfaceManager, Mobile
