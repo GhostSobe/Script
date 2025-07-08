@@ -2,7 +2,7 @@
 local Show_Button = false
 local Button_Icon = ""
 ---
--- v2
+
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
@@ -3922,6 +3922,9 @@ ElementsTable.Dropdown = (function()
 
 		local ScrollFrame = self.ScrollFrame
 		function Dropdown:Open()
+			-- ป้องกันไม่ให้ dropdown เด้งกลับเมื่อเปิดครั้งแรก
+			if Dropdown.Opened then return end
+
 			Dropdown.Opened = true
 			DropdownDisplay.Interactable = Dropdown.Searchable and true or false
 			ScrollFrame.ScrollingEnabled = false
@@ -3951,12 +3954,18 @@ ElementsTable.Dropdown = (function()
 			if Dropdown.Searchable then
 				-- เมื่อเปิดแล้ว ถ้าต้องการค้นหา ให้จับการคลิกซ้ำที่ช่อง Dropdown
 				DropdownDisplay.MouseButton1Click:Connect(function()
-					if Dropdown.Searchable then
+					if Dropdown.Searchable and not Dropdown.DisplayHasFocus then
 						DropdownDisplay:CaptureFocus()  -- เมื่อคลิกค้นหา
+						Dropdown.DisplayHasFocus = true
+					elseif Dropdown.DisplayHasFocus then
+						-- ปิดการค้นหาเมื่อคลิกอีกครั้ง
+						DropdownDisplay.Text = table.concat(Dropdown.Items, ", ")  -- กลับไปแสดงค่าใน table
+						Dropdown.DisplayHasFocus = false
 					end
 				end)
 			end
 		end
+
 
 
 		function Dropdown:Close()
