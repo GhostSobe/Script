@@ -478,7 +478,7 @@ Tabs.Settings:AddButton({
         game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, JobId)
     end
 })
-
+task.wait(1)
 local CoreGui = game:GetService("CoreGui")
 local logoGui = Instance.new("ScreenGui")
 
