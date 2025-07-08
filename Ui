@@ -2,7 +2,7 @@
 local Show_Button = false
 local Button_Icon = ""
 ---
--- V 4
+
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
@@ -4149,51 +4149,24 @@ ElementsTable.Dropdown = (function()
 
 		local ScrollFrame = self.ScrollFrame
 		function Dropdown:Open()
-			-- ป้องกันไม่ให้ dropdown เด้งกลับเมื่อเปิดครั้งแรก
-			if Dropdown.Opened then return end
-
 			Dropdown.Opened = true
 			DropdownDisplay.Interactable = Dropdown.Searchable and true or false
 			ScrollFrame.ScrollingEnabled = false
 			DropdownHolderCanvas.Visible = true
-
-			-- เลื่อนขนาดของ dropdown holder
 			TweenService:Create(
 				DropdownHolderFrame,
 				TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
 				{ Size = UDim2.fromScale(1, 1) }
 			):Play()
-
-			-- หมุนไอคอน
 			TweenService:Create(
 				DropdownIco,
 				TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
 				{ Rotation = 0 }
 			):Play()
-
-			-- แสดงค่าที่อยู่ใน table ก่อน
-			if not Dropdown.Searchable then
-				-- ถ้า Dropdown ไม่สามารถค้นหาได้ ให้แสดงค่าจาก table ที่มีอยู่
-				DropdownDisplay.Text = table.concat(Dropdown.Items, ", ")  -- ใช้ table ที่มีค่าที่คุณต้องการ
-			end
-
-			-- เริ่มค้นหาเมื่อคลิกที่ช่อง Dropdown อีกครั้ง
 			if Dropdown.Searchable then
-				-- เมื่อเปิดแล้ว ถ้าต้องการค้นหา ให้จับการคลิกซ้ำที่ช่อง Dropdown
-				DropdownDisplay.MouseButton1Click:Connect(function()
-					if Dropdown.Searchable and not Dropdown.DisplayHasFocus then
-						DropdownDisplay:CaptureFocus()  -- เมื่อคลิกค้นหา
-						Dropdown.DisplayHasFocus = true
-					elseif Dropdown.DisplayHasFocus then
-						-- ปิดการค้นหาเมื่อคลิกอีกครั้ง
-						DropdownDisplay.Text = table.concat(Dropdown.Items, ", ")  -- กลับไปแสดงค่าใน table
-						Dropdown.DisplayHasFocus = false
-					end
-				end)
+				DropdownDisplay:CaptureFocus()
 			end
 		end
-
-
 
 		function Dropdown:Close()
 			Dropdown.Opened = false
