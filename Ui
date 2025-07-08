@@ -24,6 +24,7 @@ end
 
 if Show_Button then
 	Mobile = true
+	print(Mobile)
 end
 
 local fischbypass
