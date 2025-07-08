@@ -23,7 +23,7 @@ else
 end
 
 if Show_Button then
-	Mobile = false
+	Mobile = true
 end
 
 local fischbypass
