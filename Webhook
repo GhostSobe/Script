@@ -1,0 +1,34 @@
+local url = "https://discord.com/api/webhooks/1388528373914931352/5A9jOgMPt_S5sk0A-4wzj0pTAljqwNyvKzF86TruCAqjnTkvOskmiIKtpEUykiv57JVv"
+
+local Map = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+local PlaceId = game.PlaceId
+local JobId = game.JobId
+local UserId = game.Players.LocalPlayer.UserId
+
+local data = {
+  content = nil,
+  embeds = {
+    {
+      title = "🌟 Notify Player",
+      description = "🗺️ **Map** : "..Map.."\n:crown: **Name** : SN_TEST\n<:user:1006779444968558664> **User Id** :\n``` "..UserId.."```\n<:game:1365295942504550410> **Place Id** :\n```"..PlaceId.."```\n🛸 **JobId** :\n``` "..JobId.."```",
+      color = 65362,
+      footer = {
+        text = "Made By . SnowMoon",
+        icon_url = "https://media.discordapp.net/attachments/1390065487689551962/1391848966840258600/SnowKingLogo.png?ex=6871585c&is=687006dc&hm=54ef3fa469d7d637a1b37cb40226b5894649b64fbf3594078ec93bc9eca00dd4&=&format=webp&quality=lossless&width=815&height=815"
+      },
+      timestamp = DateTime.now():ToIsoDate(),
+      thumbnail = {
+        url = "https://cdn.discordapp.com/attachments/1390065487689551962/1392964682373005432/noFilter.png?ex=687172f4&is=68702174&hm=d6d9d925db699185329d837ca0d15d92d819e3631c307b18416e9a38b5e2b58e"
+      }
+    }
+  },
+  attachments = {}
+}
+
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {["content-type"] = "application/json"}
+request = http_request or request or HttpPost
+local Webhook = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(Webhook)
+
