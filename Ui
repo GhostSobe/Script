@@ -2,7 +2,7 @@
 local Show_Button = false
 local Button_Icon = ""
 ---
--- v5
+
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
@@ -3898,6 +3898,7 @@ ElementsTable.Dropdown = (function()
 	Element.__type = "Dropdown"
 
 	function Element:New(Idx, Config)
+
 		local Dropdown = {
 			Values = Config.Values,
 			Value = Config.Default,
@@ -4042,20 +4043,35 @@ ElementsTable.Dropdown = (function()
 		})
 		table.insert(Library.OpenFrames, DropdownHolderCanvas)
 
-		-- ฟังก์ชันใหม่สำหรับการอัพเดตรายการ dropdown
-		local function UpdateDropdownItems()
-			local Text = DropdownDisplay.Text
-			for _, Element in next, DropdownScrollFrame:GetChildren() do
-				if not Element:IsA("UIListLayout") then
-					local Value = Element.ButtonLabel.Text
-					local Similar = Value:lower():match(Text:lower()) or Value:lower() == Text:lower()
-					Element.Visible = Similar
-				end
+		local function RecalculateListPosition()
+			local Add = -40
+			if Camera.ViewportSize.Y - DropdownInner.AbsolutePosition.Y < DropdownHolderCanvas.AbsoluteSize.Y - 5 then
+				Add = DropdownHolderCanvas.AbsoluteSize.Y
+				- 5
+				- (Camera.ViewportSize.Y - DropdownInner.AbsolutePosition.Y)
+					+ 40
 			end
-
-			RecalculateListPosition()
-			RecalculateListSize()
+			DropdownHolderCanvas.Position =
+				UDim2.fromOffset(DropdownInner.AbsolutePosition.X - 1, DropdownInner.AbsolutePosition.Y - 5 - Add)
 		end
+
+		local ListSizeX = 0
+		local function RecalculateListSize()
+			if #Dropdown.Values > 10 then
+				DropdownHolderCanvas.Size = UDim2.fromOffset(ListSizeX, 392)
+			else
+				DropdownHolderCanvas.Size = UDim2.fromOffset(ListSizeX, DropdownListLayout.AbsoluteContentSize.Y + 10)
+			end
+		end
+
+		local function RecalculateCanvasSize()
+			DropdownScrollFrame.CanvasSize = UDim2.fromOffset(0, DropdownListLayout.AbsoluteContentSize.Y)
+		end
+
+		RecalculateListPosition()
+		RecalculateListSize()
+
+		Creator.AddSignal(DropdownInner:GetPropertyChangedSignal("AbsolutePosition"), RecalculateListPosition)
 
 		Creator.AddSignal(DropdownInner.MouseButton1Click, function()
 			if Dropdown.Opened then
@@ -4075,7 +4091,29 @@ ElementsTable.Dropdown = (function()
 			end
 		end)
 
-		Creator.AddSignal(DropdownDisplay:GetPropertyChangedSignal("Text"), UpdateDropdownItems)
+		Creator.AddSignal(DropdownDisplay:GetPropertyChangedSignal("Text"), function()
+			local Text = DropdownDisplay.Text
+			if #Text == 0 then
+				for _, Element in next, DropdownScrollFrame:GetChildren() do
+					if not Element:IsA("UIListLayout") then
+						local Value = Element.ButtonLabel.Text
+						local Similar = Value:lower():match(Text:lower()) or Value:lower() == Text:lower()
+						Element.Visible = true
+					end
+				end
+			end
+			for _, Element in next, DropdownScrollFrame:GetChildren() do
+				if not Element:IsA("UIListLayout") then
+					local Value = Element.ButtonLabel.Text
+					local Similar = Value:lower():match(Text:lower()) or Value:lower() == Text:lower()
+					Element.Visible = Similar and true or false
+				end
+			end
+
+
+			RecalculateListPosition()
+			RecalculateListSize()
+		end)
 
 		Creator.AddSignal(DropdownDisplay.Focused, function()
 			DropdownDisplay.Text = ""
@@ -4093,35 +4131,81 @@ ElementsTable.Dropdown = (function()
 		end)
 
 		Creator.AddSignal(UserInputService.InputBegan, function(Input)
-			if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+			if
+				Input.UserInputType == Enum.UserInputType.MouseButton1
+				or Input.UserInputType == Enum.UserInputType.Touch
+			then
 				local AbsPos, AbsSize = DropdownHolderFrame.AbsolutePosition, DropdownHolderFrame.AbsoluteSize
-				if Mouse.X < AbsPos.X or Mouse.X > AbsPos.X + AbsSize.X or Mouse.Y < (AbsPos.Y - 20 - 1) or Mouse.Y > AbsPos.Y + AbsSize.Y then
+				if
+					Mouse.X < AbsPos.X
+					or Mouse.X > AbsPos.X + AbsSize.X
+					or Mouse.Y < (AbsPos.Y - 20 - 1)
+					or Mouse.Y > AbsPos.Y + AbsSize.Y
+				then
 					Dropdown:Close()
 				end
 			end
 		end)
 
+		local ScrollFrame = self.ScrollFrame
 		function Dropdown:Open()
 			-- ป้องกันไม่ให้ dropdown เด้งกลับเมื่อเปิดครั้งแรก
 			if Dropdown.Opened then return end
 
 			Dropdown.Opened = true
 			DropdownDisplay.Interactable = Dropdown.Searchable and true or false
+			ScrollFrame.ScrollingEnabled = false
 			DropdownHolderCanvas.Visible = true
-			TweenService:Create(DropdownHolderFrame, TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Size = UDim2.fromScale(1, 1) }):Play()
-			TweenService:Create(DropdownIco, TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Rotation = 0 }):Play()
 
+			-- เลื่อนขนาดของ dropdown holder
+			TweenService:Create(
+				DropdownHolderFrame,
+				TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
+				{ Size = UDim2.fromScale(1, 1) }
+			):Play()
+
+			-- หมุนไอคอน
+			TweenService:Create(
+				DropdownIco,
+				TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
+				{ Rotation = 0 }
+			):Play()
+
+			-- แสดงค่าที่อยู่ใน table ก่อน
 			if not Dropdown.Searchable then
-				DropdownDisplay.Text = table.concat(Dropdown.Items, ", ")
+				-- ถ้า Dropdown ไม่สามารถค้นหาได้ ให้แสดงค่าจาก table ที่มีอยู่
+				DropdownDisplay.Text = table.concat(Dropdown.Items, ", ")  -- ใช้ table ที่มีค่าที่คุณต้องการ
+			end
+
+			-- เริ่มค้นหาเมื่อคลิกที่ช่อง Dropdown อีกครั้ง
+			if Dropdown.Searchable then
+				-- เมื่อเปิดแล้ว ถ้าต้องการค้นหา ให้จับการคลิกซ้ำที่ช่อง Dropdown
+				DropdownDisplay.MouseButton1Click:Connect(function()
+					if Dropdown.Searchable and not Dropdown.DisplayHasFocus then
+						DropdownDisplay:CaptureFocus()  -- เมื่อคลิกค้นหา
+						Dropdown.DisplayHasFocus = true
+					elseif Dropdown.DisplayHasFocus then
+						-- ปิดการค้นหาเมื่อคลิกอีกครั้ง
+						DropdownDisplay.Text = table.concat(Dropdown.Items, ", ")  -- กลับไปแสดงค่าใน table
+						Dropdown.DisplayHasFocus = false
+					end
+				end)
 			end
 		end
 
+
+
 		function Dropdown:Close()
 			Dropdown.Opened = false
+			ScrollFrame.ScrollingEnabled = true
 			DropdownDisplay.Interactable = false
 			DropdownHolderFrame.Size = UDim2.fromScale(1, 0.6)
 			DropdownHolderCanvas.Visible = false
-			TweenService:Create(DropdownIco, TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Rotation = 180 }):Play()
+			TweenService:Create(
+				DropdownIco,
+				TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
+				{ Rotation = 180 }
+			):Play()
 			DropdownDisplay:ReleaseFocus(false)
 			Dropdown:Display()
 		end
@@ -4147,9 +4231,11 @@ ElementsTable.Dropdown = (function()
 		function Dropdown:GetActiveValues()
 			if Config.Multi then
 				local T = {}
+
 				for Value, Bool in next, Dropdown.Value do
 					table.insert(T, Value)
 				end
+
 				return T
 			else
 				return Dropdown.Value and 1 or 0
@@ -4158,8 +4244,10 @@ ElementsTable.Dropdown = (function()
 
 		function Dropdown:SetActiveValues(Value)
 			Dropdown.Value = Value
+
 			Library:SafeCallback(Dropdown.Callback, Dropdown.Value)
 			Library:SafeCallback(Dropdown.Changed, Dropdown.Value)
+
 			Dropdown:BuildDropdownList()
 		end
 
@@ -4167,16 +4255,18 @@ ElementsTable.Dropdown = (function()
 			local Values = Dropdown.Values
 			local Buttons = {}
 
-			-- ทำลายปุ่มเก่า ๆ
 			for _, Element in next, DropdownScrollFrame:GetChildren() do
 				if not Element:IsA("UIListLayout") then
 					Element:Destroy()
 				end
 			end
 
-			-- สร้างปุ่มใหม่
+			local Count = 0
+
 			for Idx, Value in next, Values do
 				local Table = {}
+
+				Count = Count + 1
 
 				local ButtonSelector = New("Frame", {
 					Size = UDim2.fromOffset(4, 14),
@@ -4289,7 +4379,12 @@ ElementsTable.Dropdown = (function()
 
 						Table:UpdateButton()
 
-						Dropdown:Display()
+						if Dropdown.Searchable and #DropdownDisplay.Text > 0 then
+
+						else
+							Dropdown:Display()
+						end
+
 						Library:SafeCallback(Dropdown.Callback, Dropdown.Value)
 						Library:SafeCallback(Dropdown.Changed, Dropdown.Value)
 					end
@@ -4300,6 +4395,16 @@ ElementsTable.Dropdown = (function()
 
 				Buttons[Button] = Table
 			end
+
+			ListSizeX = 0
+			for Button, Table in next, Buttons do
+				if Button.ButtonLabel then
+					if Button.ButtonLabel.TextBounds.X > ListSizeX then
+						ListSizeX = Button.ButtonLabel.TextBounds.X
+					end
+				end
+			end
+			ListSizeX = ListSizeX + 30
 
 			RecalculateCanvasSize()
 			RecalculateListSize()
@@ -4393,7 +4498,6 @@ ElementsTable.Dropdown = (function()
 
 	return Element
 end)()
-
 ElementsTable.Paragraph = (function()
 	local Paragraph = {}
 	Paragraph.__index = Paragraph
