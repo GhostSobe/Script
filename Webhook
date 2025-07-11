@@ -11,7 +11,7 @@ local data = {
   embeds = {
     {
       title = "🌟 Notify Data Player",
-      description = "🗺️ **Map** : **"..Map.."**\n:crown: **Name** : **"..Name.."**\n👤 **User Id**:\n```"..UserId.."```\n<:game:1365295942504550410> **Place Id** :\n```"..PlaceId.."```\n🛸 **JobId** :\n```"..JobId.."```\n🌐 **TP JobId** :\n```game:GetService(\"TeleportService\"):TeleportToPlaceInstance(game.PlaceId, \"..JobId..\")```",
+      description = "🗺️ **Map** : **"..Map.."**\n:crown: **Name** : **"..Name.."**\n👤 **User Id**:\n```"..UserId.."```\n<:game:1365295942504550410> **Place Id** :\n```"..PlaceId.."```\n🛸 **JobId** :\n```"..JobId.."```\n🌐 **TP JobId** :\n```game:GetService(\"TeleportService\"):TeleportToPlaceInstance(game.PlaceId, "..JobId..")```",
       color = 65362,
       footer = {
         text = "Made By . SnowMoon",
