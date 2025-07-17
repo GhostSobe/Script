@@ -1,4 +1,4 @@
--- v6
+-- v7
 local a, b = {
     {
         1,
@@ -131,7 +131,7 @@ local aa = {
             Window = nil,
             WindowFrame = nil,
             Unloaded = false,
-            Theme = "Ocean",
+            Theme = "Navy",
             DialogOpen = false,
             UseAcrylic = false,
             Acrylic = false,
@@ -2037,7 +2037,7 @@ local aa = {
             if i[e(h).Theme][m] then
                 return i[e(h).Theme][m]
             end
-            return i.Dark[m]
+            return i.Navy[m]
         end
         function k.UpdateTheme()
             for m, n in next, k.Registry do
