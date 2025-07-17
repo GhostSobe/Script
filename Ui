@@ -1,4 +1,3 @@
--- v4
 local a, b = {
     {
         1,
@@ -131,7 +130,7 @@ local aa = {
             Window = nil,
             WindowFrame = nil,
             Unloaded = false,
-            Theme = "",
+            Theme = "Navy",
             DialogOpen = false,
             UseAcrylic = false,
             Acrylic = false,
