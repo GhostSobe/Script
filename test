@@ -13,10 +13,11 @@ local Window = Fluent:CreateWindow({
 })
 
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "crown" }),
+    Home = Window:AddTab({ Title = "Home", Icon = "home" }),
+    Script = Window:AddTab({ Title = "Script", Icon = "rbxassetid://10734907168" }),
     Plr = Window:AddTab({ Title = "Players", Icon = "user" }),
     TP = Window:AddTab({ Title = "Teleport", Icon = "map-pin" }),
-    Contact = Window:AddTab({ Title = "Contact", Icon = "contact" }),
+    --Contact = Window:AddTab({ Title = "Contact", Icon = "contact" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
@@ -30,8 +31,8 @@ local StarterGui = game:GetService("StarterGui")
 local Script = {
     -- "Speed Hub",
     --"Nat Hub",
-    "No-Lag Hub",
-    "Bonk Hub",
+    --"No-Lag Hub",
+    -- "Bonk Hub",
     "Thunder Z",
     "AvOnTop",
     "Fetching's Hub",
@@ -48,8 +49,9 @@ local Script = {
 local ScriptK = {
     "Speed Hub",
     "Nat Hub",
+    "No-Lag Hub",
     "Lunor",
-    --"Bonk Hub",
+    "Bonk Hub",
     "H4xScript",
     "Rifton",
     "Forge Hub",
@@ -78,12 +80,31 @@ do
         Duration = 5
     })
 
-    Tabs.Main:AddSection("[ Nokey / ไม่มีคีย์ ]")
+    Tabs.Home:AddParagraph({
+        Title = "Owner",
+        Content = "หากสคริปต์มีบัคโปรดติดต่อที่ดิสคอร์ดด้านล่าง"
+    })
 
-    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+    Tabs.Home:AddButton({
+        Title = "Discord Invite",
+        Description = "กดเพื่อคัดลอกลิ้งค์ดิสคอร์ด",
+        Callback = function()
+            setclipboard("https://discord.gg/yt-rocket")
+            StarterGui:SetCore("SendNotification", {
+                Title = "System",
+                Icon = "rbxassetid://118974663345349",
+                Text = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดของคุณแล้ว",
+                Duration = 4,
+            })
+        end
+    })
+    end)
+
+    Tabs.Script:AddSection("[ Nokey / ไม่มีคีย์ ]")
+
+    local Dropdown = Tabs.Script:AddDropdown("Dropdown", {
         Title = "Select Scripts",
         Values = Script,
-        Searchable = true,
         Multi = false,
         Default = "เลือกสคริปต์",
     })
@@ -94,15 +115,15 @@ do
         Scripts = Value
     end)
 --------------------------------------------
-    Tabs.Main:AddButton({
+    Tabs.Script:AddButton({
         Title = "Click To Execute",
         Description = "กดเพื่อรันสคริปต์",
         Callback = function()
+            -- if Scripts == "No-Lag Hub" then
+            --     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV2.lua"))();
             -- elseif Scripts == "Nat Hub" then
             --     loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
-            if Scripts == "No-Lag Hub" then
-                loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV2.lua"))();
-            elseif Scripts == "AvOnTop" then
+            if Scripts == "AvOnTop" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Ayvathion/AV-On-Top/refs/heads/main/Loader.lua"))();
             elseif Scripts == "Jimi Hub" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/bunnnwee/JimiHub/refs/heads/main/GrowAGarden-Normal"))();
@@ -122,8 +143,8 @@ do
                 loadstring(game:HttpGet('https://pastebin.com/raw/BjkuU1TV'))();
             elseif Scripts == "Thunder Z" then
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/ThundarZ/Welcome/refs/heads/main/Main/GaG/Main.lua'))();
-            elseif Scripts == "Bonk Hub" then
-                loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
+            -- elseif Scripts == "Bonk Hub" then
+            --     loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
             -- elseif Scripts == "Speed Hub" then
             --    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
             elseif Scripts == "Fetching's Hub" then
@@ -132,12 +153,11 @@ do
         end
     })
 
-    Tabs.Main:AddSection("[ Key / มีคีย์  ]")
+    Tabs.Script:AddSection("[ Key / มีคีย์  ]")
 
-    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+    local Dropdown = Tabs.Script:AddDropdown("Dropdown", {
         Title = "Select Scripts",
         Values = ScriptK,
-        Searchable = true,
         Multi = false,
         Default = "เลือกสคริปต์",
     })
@@ -148,7 +168,7 @@ do
         ScriptsK = Value
     end)
 
-    Tabs.Main:AddButton({
+    Tabs.Script:AddButton({
         Title = "Click To Execute",
         Description = "กดเพื่อรันสคริปต์",
         Callback = function()
@@ -156,8 +176,8 @@ do
                loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))();
             elseif ScriptsK == "Lunor" then
                 loadstring(game:HttpGet("https://lunor.dev/loader"))();
-            -- elseif ScriptsK == "Bonk Hub" then
-            --     loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
+            elseif ScriptsK == "Bonk Hub" then
+                loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
             elseif ScriptsK == "H4xScript" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader2.lua"))();
             elseif ScriptsK == "Rifton" then
@@ -174,16 +194,17 @@ do
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/checkurasshole/Script/refs/heads/main/IQ'))();
             elseif ScriptsK == "Nat Hub" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
+            elseif Scripts == "No-Lag Hub" then
+                loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV2.lua"))();
             end
         end
     })
 
-    Tabs.Main:AddSection("[ Other / อื่นๆ ]")
+    Tabs.Script:AddSection("[ Other / อื่นๆ ]")
 
-    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+    local Dropdown = Tabs.Script:AddDropdown("Dropdown", {
         Title = "Select Scripts",
         Values = Other,
-        Searchable = true,
         Multi = false,
         Default = "เลือกสคริปต์",
     })
@@ -194,7 +215,7 @@ do
         Others = Value
     end)
 
-    Tabs.Main:AddButton({
+    Tabs.Script:AddButton({
         Title = "Click To Execute",
         Description = "กดเพื่อรันสคริปต์",
         Callback = function()
@@ -307,7 +328,7 @@ do
         Title = "Teleport To Event",
         Description = "วาปไป Event ตรงกลาง",
         Callback = function()
-            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-114.764969, 3.32000947, -14.5408745, 0.0133202868, -2.56502126e-08, -0.999911308, 6.97121081e-08, 1, -2.47238212e-08, 0.999911308, -6.93765969e-08, 0.0133202868)
+            LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-91.7267303, 3.83840728, -9.17810059, -0.0134515036, -1.96820515e-08, 0.99990952, -9.37382652e-08, 1, 1.84227975e-08, -0.99990952, -9.34819653e-08, -0.0134515036)
         end
     })
 
@@ -385,35 +406,10 @@ do
         end
     })
 
-
-    Tabs.Contact:AddSection("[ Discord ]")
-
     -- Tabs.Contact:AddParagraph({
     --     Title = "System",
     --     Content = "สคริปต์ไหนไม่สามรถรันได้โปรดแจ้งได้ที่ Discord ด่านล่าง"
     -- })
-
-    Tabs.Contact:AddButton({
-        Title = "Discord Invite",
-        Description = "กดเพื่อคัดลอกลิ้งค์ดิสคอร์ด",
-        Callback = function()
-            setclipboard("https://discord.gg/yt-rocket")
-            -- Fluent:Notify({
-            --     Title = "Notification",
-            --     Content = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดของคุณแล้ว",
-            --     Icon = "rbxassetid://96080169937759",
-            --     SubContent = "",
-            --     Duration = 5
-            -- })
-            StarterGui:SetCore("SendNotification", {
-                Title = "System",
-                Icon = "rbxassetid://118974663345349",
-                Text = "ได้คัดลอกลิ้งค์ไปยังคีบอร์ดของคุณแล้ว",
-                Duration = 4,
-            })
-        end
-    })
-    end)
 end
 
 SaveManager:SetLibrary(Fluent)
