@@ -16,7 +16,12 @@ local a, b = {
                     {51, "ModuleScript", {"Darker"}},
                     {53, "ModuleScript", {"Rose"}},
                     {49, "ModuleScript", {"Aqua"}},
-                    {48, "ModuleScript", {"Amethyst"}}
+                    {48, "ModuleScript", {"Amethyst"}},
+                    {54, "ModuleScript", {"Navy"}},
+                    {55, "ModuleScript", {"Bloody"}},
+                    {56, "ModuleScript", {"Ocean"}},
+                    {57, "ModuleScript", {"Grape"}},
+                    {58, "ModuleScript", {"Midnight"}}
                 }
             },
             {
@@ -3594,6 +3599,7 @@ local aa = {
                 ["lucide-archive"] = "rbxassetid://10709762233",
                 ["lucide-archive-restore"] = "rbxassetid://10709762058",
                 ["lucide-armchair"] = "rbxassetid://10709762327",
+                ["lucide-anvil"] = "rbxassetid://77943964625400",
                 ["lucide-arrow-big-down"] = "rbxassetid://10747796644",
                 ["lucide-arrow-big-left"] = "rbxassetid://10709762574",
                 ["lucide-arrow-big-right"] = "rbxassetid://10709762727",
@@ -3791,6 +3797,7 @@ local aa = {
                 ["lucide-cup-soda"] = "rbxassetid://10709818763",
                 ["lucide-curly-braces"] = "rbxassetid://10709818847",
                 ["lucide-currency"] = "rbxassetid://10709818931",
+                ["lucide-container"] = "rbxassetid://17466205552",
                 ["lucide-database"] = "rbxassetid://10709818996",
                 ["lucide-delete"] = "rbxassetid://10709819059",
                 ["lucide-diamond"] = "rbxassetid://10709819149",
@@ -3809,6 +3816,7 @@ local aa = {
                 ["lucide-dollar-sign"] = "rbxassetid://10723343958",
                 ["lucide-download"] = "rbxassetid://10723344270",
                 ["lucide-download-cloud"] = "rbxassetid://10723344088",
+                ["lucide-door-open"] = "rbxassetid://124179241653522",
                 ["lucide-droplet"] = "rbxassetid://10723344432",
                 ["lucide-droplets"] = "rbxassetid://10734883356",
                 ["lucide-drumstick"] = "rbxassetid://10723344737",
@@ -4040,6 +4048,7 @@ local aa = {
                 ["lucide-list-plus"] = "rbxassetid://10723427334",
                 ["lucide-list-start"] = "rbxassetid://10723427494",
                 ["lucide-list-video"] = "rbxassetid://10723427619",
+                ["lucide-list-todo"] = "rbxassetid://17376008003",
                 ["lucide-list-x"] = "rbxassetid://10723433655",
                 ["lucide-loader"] = "rbxassetid://10723434070",
                 ["lucide-loader-2"] = "rbxassetid://10723433935",
@@ -4151,6 +4160,7 @@ local aa = {
                 ["lucide-pipette"] = "rbxassetid://10734922497",
                 ["lucide-pizza"] = "rbxassetid://10734922774",
                 ["lucide-plane"] = "rbxassetid://10734922971",
+                ["lucide-plane-landing"] = "rbxassetid://17376029914",
                 ["lucide-play"] = "rbxassetid://10734923549",
                 ["lucide-play-circle"] = "rbxassetid://10734923214",
                 ["lucide-plus"] = "rbxassetid://10734924532",
@@ -4348,6 +4358,7 @@ local aa = {
                 ["lucide-volume-1"] = "rbxassetid://10747375450",
                 ["lucide-volume-2"] = "rbxassetid://10747375679",
                 ["lucide-volume-x"] = "rbxassetid://10747375880",
+                ["lucide-wheat"] = "rbxassetid://80877624162595",
                 ["lucide-wallet"] = "rbxassetid://10747376205",
                 ["lucide-wand"] = "rbxassetid://10747376565",
                 ["lucide-wand-2"] = "rbxassetid://10747376349",
@@ -4364,7 +4375,11 @@ local aa = {
                 ["lucide-x-octagon"] = "rbxassetid://10747384037",
                 ["lucide-x-square"] = "rbxassetid://10747384217",
                 ["lucide-zoom-in"] = "rbxassetid://10747384552",
-                ["lucide-zoom-out"] = "rbxassetid://10747384679"
+                ["lucide-zoom-out"] = "rbxassetid://10747384679",
+                ["lucide-cat"] = "rbxassetid://16935650691",
+                ["lucide-message-circle-question"] = "rbxassetid://16970049192",
+                ["lucide-webhook"] = "rbxassetid://17320556264",
+                ["lucide-dumbbell"] = "rbxassetid://18273453053"
             }
         }
     end,
@@ -5288,6 +5303,209 @@ local aa = {
             SubText = Color3.fromRGB(170, 170, 170),
             Hover = Color3.fromRGB(200, 120, 170),
             HoverChange = 0.04
+        }
+    end,
+    [54] = function()
+        local aa, ab, ac, ad, ae = b(53)
+        return {
+            Name = "Navy",
+            Accent = Color3.fromRGB(0, 105, 148),  -- น้ำเงินเข้ม
+            AcrylicMain = Color3.fromRGB(20, 30, 50),  -- พื้นหลังสีเข้ม
+            AcrylicBorder = Color3.fromRGB(35, 55, 75),  -- ขอบสีเข้ม
+            AcrylicGradient = ColorSequence.new(Color3.fromRGB(10, 20, 35), Color3.fromRGB(25, 40, 60)),  -- เกรเดียนต์น้ำเงินเข้ม
+            AcrylicNoise = 0.9,
+            TitleBarLine = Color3.fromRGB(25, 40, 60),  -- บาร์หัวข้อสีน้ำเงินเข้ม
+            Tab = Color3.fromRGB(50, 70, 90),  -- สีของแท็บ
+            Element = Color3.fromRGB(40, 60, 80),  -- สีของแต่ละส่วน
+            ElementBorder = Color3.fromRGB(50, 75, 100),  -- ขอบของส่วนต่างๆ
+            InElementBorder = Color3.fromRGB(55, 85, 110),  -- ขอบในส่วน
+            ElementTransparency = 0.88,
+            ToggleSlider = Color3.fromRGB(75, 100, 130),  -- สีของสไลเดอร์
+            ToggleToggled = Color3.fromRGB(15, 25, 35),  -- สีของ toggle ที่ถูกเปิด
+            SliderRail = Color3.fromRGB(75, 100, 130),  -- สีของรางสไลเดอร์
+            DropdownFrame = Color3.fromRGB(90, 130, 160),  -- สีของกรอบ dropdown
+            DropdownHolder = Color3.fromRGB(25, 40, 55),  -- สีของพื้นหลัง dropdown
+            DropdownBorder = Color3.fromRGB(50, 75, 100),  -- ขอบของ dropdown
+            DropdownOption = Color3.fromRGB(75, 100, 130),  -- ตัวเลือกใน dropdown
+            Keybind = Color3.fromRGB(75, 100, 130),  -- สีของ keybind
+            Input = Color3.fromRGB(75, 100, 130),  -- สีของ input box
+            InputFocused = Color3.fromRGB(20, 30, 50),  -- สีของ input เมื่อโฟกัส
+            InputIndicator = Color3.fromRGB(100, 150, 200),  -- ตัวบ่งชี้ใน input
+            InputIndicatorFocus = Color3.fromRGB(0, 105, 148),  -- ตัวบ่งชี้ใน input เมื่อโฟกัส
+            Dialog = Color3.fromRGB(25, 40, 55),  -- สีพื้นหลังของ dialog
+            DialogHolder = Color3.fromRGB(15, 25, 40),  -- สีของพื้นที่ใน dialog
+            DialogHolderLine = Color3.fromRGB(10, 20, 35),  -- ขอบใน dialog
+            DialogButton = Color3.fromRGB(25, 40, 55),  -- สีของปุ่มใน dialog
+            DialogButtonBorder = Color3.fromRGB(35, 50, 70),  -- ขอบของปุ่มใน dialog
+            DialogBorder = Color3.fromRGB(30, 45, 65),  -- ขอบของ dialog
+            DialogInput = Color3.fromRGB(30, 50, 70),  -- สีของ input ใน dialog
+            DialogInputLine = Color3.fromRGB(90, 130, 160),  -- ขอบของ input ใน dialog
+            Text = Color3.fromRGB(240, 250, 255),  -- สีของข้อความหลัก
+            SubText = Color3.fromRGB(180, 200, 220),  -- สีของข้อความรอง
+            Hover = Color3.fromRGB(75, 100, 130),  -- สีของ hover
+            HoverChange = 0.05  -- การเปลี่ยนแปลงเมื่อ hover
+        }
+    end,
+    [55] = function()
+        local aa, ab, ac, ad, ae = b(53)
+        return {
+            Name = "Bloody",
+            Accent = Color3.fromRGB(144, 0, 0),
+            AcrylicMain = Color3.fromRGB(61, 0, 0),
+            AcrylicBorder = Color3.fromRGB(86, 0, 0),
+            AcrylicGradient = ColorSequence.new(Color3.fromRGB(90, 0, 0), Color3.fromRGB(100, 0, 0)),
+            AcrylicNoise = 0.92,
+            TitleBarLine = Color3.fromRGB(126, 0, 0),
+            Tab = Color3.fromRGB(134, 0, 0),
+            Element = Color3.fromRGB(156, 0, 0),
+            ElementBorder = Color3.fromRGB(91, 0, 0),
+            InElementBorder = Color3.fromRGB(106, 0, 0),
+            ElementTransparency = 0.86,
+            ToggleSlider = Color3.fromRGB(130, 5, 5),
+            ToggleToggled = Color3.fromRGB(66, 0, 0),
+            SliderRail = Color3.fromRGB(150, 30, 30),
+            DropdownFrame = Color3.fromRGB(150, 30, 30),
+            DropdownHolder = Color3.fromRGB(79, 0, 0),
+            DropdownBorder = Color3.fromRGB(116, 0, 0),
+            DropdownOption = Color3.fromRGB(150, 30, 30),
+            Keybind = Color3.fromRGB(150, 30, 30),
+            Input = Color3.fromRGB(150, 30, 30),
+            InputFocused = Color3.fromRGB(40, 10, 10),
+            InputIndicator = Color3.fromRGB(113, 1, 1),
+            Dialog = Color3.fromRGB(85, 0, 1),
+            DialogHolder = Color3.fromRGB(77, 0, 8),
+            DialogHolderLine = Color3.fromRGB(88, 4, 4),
+            DialogButton = Color3.fromRGB(115, 14, 21),
+            DialogButtonBorder = Color3.fromRGB(83, 0, 1),
+            DialogBorder = Color3.fromRGB(43, 4, 5),
+            DialogInput = Color3.fromRGB(108, 20, 21),
+            DialogInputLine = Color3.fromRGB(91, 1, 1),
+            Text = Color3.fromRGB(240, 240, 240),
+            SubText = Color3.fromRGB(131, 131, 131),
+            Hover = Color3.fromRGB(181, 0, 0),
+            HoverChange = 0.04
+        }
+    end,
+    [56] = function()
+        local aa, ab, ac, ad, ae = b(53)
+        return {
+            Name = "Ocean",
+            Accent = Color3.fromRGB(0, 141, 255),
+            AcrylicMain = Color3.fromRGB(20, 25, 40),
+            AcrylicBorder = Color3.fromRGB(40, 60, 100),
+            AcrylicGradient = ColorSequence.new(Color3.fromRGB(15, 25, 45), Color3.fromRGB(20, 30, 50)),
+            AcrylicNoise = 0.92,
+            TitleBarLine = Color3.fromRGB(50, 70, 120),
+            Tab = Color3.fromRGB(70, 90, 160),
+            Element = Color3.fromRGB(60, 80, 140),
+            ElementBorder = Color3.fromRGB(30, 40, 70),
+            InElementBorder = Color3.fromRGB(50, 60, 100),
+            ElementTransparency = 0.87,
+            ToggleSlider = Color3.fromRGB(80, 100, 170),
+            ToggleToggled = Color3.fromRGB(11, 35, 67),
+            SliderRail = Color3.fromRGB(80, 100, 170),
+            DropdownFrame = Color3.fromRGB(90, 110, 180),
+            DropdownHolder = Color3.fromRGB(25, 35, 60),
+            DropdownBorder = Color3.fromRGB(30, 40, 70),
+            DropdownOption = Color3.fromRGB(80, 100, 170),
+            Keybind = Color3.fromRGB(80, 100, 170),
+            Input = Color3.fromRGB(80, 100, 170),
+            InputFocused = Color3.fromRGB(15, 20, 35),
+            InputIndicator = Color3.fromRGB(100, 120, 190),
+            InputIndicatorFocus = Color3.fromRGB(0, 141, 255),
+            Dialog = Color3.fromRGB(25, 35, 60),
+            DialogHolder = Color3.fromRGB(20, 30, 55),
+            DialogHolderLine = Color3.fromRGB(15, 25, 50),
+            DialogButton = Color3.fromRGB(25, 35, 60),
+            DialogButtonBorder = Color3.fromRGB(45, 65, 110),
+            DialogBorder = Color3.fromRGB(40, 60, 100),
+            DialogInput = Color3.fromRGB(35, 45, 70),
+            DialogInputLine = Color3.fromRGB(90, 110, 180),
+            Text = Color3.fromRGB(240, 240, 240),
+            SubText = Color3.fromRGB(170, 170, 170),
+            Hover = Color3.fromRGB(80, 100, 170),
+            HoverChange = 0.04
+        }
+    end,
+    [57] = function()
+        local aa, ab, ac, ad, ae = b(53)
+        return {
+            Name = "Grape",
+            Accent = Color3.fromRGB(183, 176, 223),
+            AcrylicMain = Color3.fromRGB(0, 0, 0),
+            AcrylicBorder = Color3.fromRGB(20, 20, 20),
+            AcrylicGradient = ColorSequence.new(Color3.fromRGB(6, 0, 16), Color3.fromRGB(6, 0, 16)),
+            AcrylicNoise = 1,
+            TitleBarLine = Color3.fromRGB(25, 25, 25),
+            Tab = Color3.fromRGB(40, 40, 40),
+            Element = Color3.fromRGB(15, 15, 15),
+            ElementBorder = Color3.fromRGB(6, 0, 16),
+            InElementBorder = Color3.fromRGB(40, 40, 40),
+            ElementTransparency = 1,
+            ToggleSlider = Color3.fromRGB(255, 255, 255),
+            ToggleToggled = Color3.fromRGB(19, 16, 36),
+            SliderRail = Color3.fromRGB(40, 40, 40),
+            DropdownFrame = Color3.fromRGB(20, 20, 20),
+            DropdownHolder = Color3.fromRGB(12, 0, 34),
+            DropdownBorder = Color3.fromRGB(6, 0, 16),
+            DropdownOption = Color3.fromRGB(40, 40, 40),
+            Keybind = Color3.fromRGB(40, 40, 40),
+            Input = Color3.fromRGB(40, 40, 40),
+            InputFocused = Color3.fromRGB(6, 0, 16),
+            InputIndicator = Color3.fromRGB(60, 60, 60),
+            InputIndicatorFocus = Color3.fromRGB(255, 255, 255),
+            Dialog = Color3.fromRGB(7, 0, 18),
+            DialogHolder = Color3.fromRGB(7, 0, 18),
+            DialogHolderLine = Color3.fromRGB(7, 0, 18),
+            DialogButton = Color3.fromRGB(13, 0, 33),
+            DialogButtonBorder = Color3.fromRGB(30, 30, 30),
+            DialogBorder = Color3.fromRGB(27, 27, 27),
+            DialogInput = Color3.fromRGB(7, 0, 18),
+            DialogInputLine = Color3.fromRGB(60, 60, 60),
+            Text = Color3.fromRGB(255, 255, 255),
+            SubText = Color3.fromRGB(123, 144, 170),
+            Hover = Color3.fromRGB(40, 40, 40),
+            HoverChange = 0.04
+        }
+    end,
+    [58] = function()
+        local aa, ab, ac, ad, ae = b(53)
+        return {
+            Name = "Midnight",
+            Accent = Color3.fromRGB(52, 50, 178),
+            AcrylicMain = Color3.fromRGB(20, 20, 20),
+            AcrylicBorder = Color3.fromRGB(83, 83, 130),
+            AcrylicGradient = ColorSequence.new(Color3.fromRGB(1, 1, 39), Color3.fromRGB(6, 6, 54)),
+            AcrylicNoise = 0.96,
+            TitleBarLine = Color3.fromRGB(77, 75, 126),
+            Tab = Color3.fromRGB(126, 127, 180),
+            Element = Color3.fromRGB(111, 108, 160),
+            ElementBorder = Color3.fromRGB(32, 32, 59),
+            InElementBorder = Color3.fromRGB(85, 83, 110),
+            ElementTransparency = 0.87,
+            ToggleSlider = Color3.fromRGB(120, 117, 160),
+            ToggleToggled = Color3.fromRGB(30, 12, 68),
+            SliderRail = Color3.fromRGB(117, 117, 160),
+            DropdownFrame = Color3.fromRGB(161, 161, 200),
+            DropdownHolder = Color3.fromRGB(35, 36, 80),
+            DropdownBorder = Color3.fromRGB(32, 30, 65),
+            DropdownOption = Color3.fromRGB(116, 116, 160),
+            Keybind = Color3.fromRGB(110, 123, 160),
+            Input = Color3.fromRGB(116, 112, 160),
+            InputFocused = Color3.fromRGB(20, 10, 30),
+            InputIndicator = Color3.fromRGB(136, 140, 190),
+            Dialog = Color3.fromRGB(37, 37, 80),
+            DialogHolder = Color3.fromRGB(24, 24, 65),
+            DialogHolderLine = Color3.fromRGB(25, 26, 60),
+            DialogButton = Color3.fromRGB(46, 44, 80),
+            DialogButtonBorder = Color3.fromRGB(71, 72, 110),
+            DialogBorder = Color3.fromRGB(72, 70, 100),
+            DialogInput = Color3.fromRGB(55, 55, 85),
+            DialogInputLine = Color3.fromRGB(133, 131, 190),
+            Text = Color3.fromRGB(240, 240, 240),
+            SubText = Color3.fromRGB(170, 170, 170),
+            Hover = Color3.fromRGB(119, 121, 160),
+            HoverChange = 0.04,
         }
     end
 }
