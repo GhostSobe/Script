@@ -5,13 +5,14 @@ local PlaceId = game.PlaceId
 local JobId = game.JobId
 local UserId = game.Players.LocalPlayer.UserId
 local Name = game.Players.LocalPlayer.Name
+local Cash = game:GetService("Players").LocalPlayer.leaderstats.Sheckles.Value
 
 local data = {
     content = nil,
     embeds = {
         {
             title = "🌟 Webhook Roblox",
-            description = "🗺️ **Map : "..Map.."**\n📛 **Player : "..Name.."**\n💵 **Cash : 3000000**\n🪪 **User ID**\n```"..UserId.."```\n🎮 **Place Id**\n```"..PlaceId.."```\n🖇️ **Job Id**\n```"..JobId.."```\n🚁 **TP  JobID**\n```game:GetService(\"TeleportService\"):TeleportToPlaceInstance(game.PlaceId, \"" .. JobId .. "\")```",
+            description = "🗺️ **Map : "..Map.."**\n📛 **Player : "..Name.."**\n💵 **Cash : "..Cash.."**\n🪪 **User ID**\n```"..UserId.."```\n🎮 **Place Id**\n```"..PlaceId.."```\n🖇️ **Job Id**\n```"..JobId.."```",
             color = 8060672,
             footer = {
                 text = "Made By : Khaotom",
