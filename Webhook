@@ -1,4 +1,4 @@
-local url = "https://discord.com/api/webhooks/1388528373914931352/5A9jOgMPt_S5sk0A-4wzj0pTAljqwNyvKzF86TruCAqjnTkvOskmiIKtpEUykiv57JVv"
+getgenv().url = "https://discord.com/api/webhooks/1388528373914931352/5A9jOgMPt_S5sk0A-4wzj0pTAljqwNyvKzF86TruCAqjnTkvOskmiIKtpEUykiv57JVv"
 
 local Map = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 local PlaceId = game.PlaceId
@@ -7,28 +7,29 @@ local UserId = game.Players.LocalPlayer.UserId
 local Name = game.Players.LocalPlayer.Name
 
 local data = {
-  content = nil,
-  embeds = {
-    {
-      title = "🌟 Notify Data Player",
-      description = "🗺️ **Map Name** : **"..Map.."**\n:crown: **Player Name** : **"..Name.."**\n👤 **User Id**:\n```"..UserId.."```\n<:game:1365295942504550410> **Place Id** :\n```"..PlaceId.."```\n🛸 **JobId** :\n```"..JobId.."```\n🌐 **TP JobId** :\n```game:GetService(\"TeleportService\"):TeleportToPlaceInstance(game.PlaceId, \"" .. JobId .. "\")```",
-      color = 65362,
-      footer = {
-        text = "Made By . SnowMoon",
-        icon_url = "https://media.discordapp.net/attachments/1390065487689551962/1391848966840258600/SnowKingLogo.png?ex=6871585c&is=687006dc&hm=54ef3fa469d7d637a1b37cb40226b5894649b64fbf3594078ec93bc9eca00dd4&=&format=webp&quality=lossless&width=815&height=815"
-      },
-      timestamp = DateTime.now():ToIsoDate(),
-      thumbnail = {
-        url = "https://media.discordapp.net/attachments/1390065487689551962/1393217732484272148/7cIIPlWm4m7AGqVpEsIfyL-HW4cQla4ucXnfalMft1TMIYQIlf2vqgmthlZgbNAQoaQ.png?ex=68725ea0&is=68710d20&hm=97d6a7d213da62d6284e7d33fd2765e87301eb45fb4b2c6df4dd8213b93c9a71&=&format=webp&quality=lossless&width=640&height=640"
-      }
-    }
-  },
-  attachments = {}
+    content = nil,
+    embeds = {
+        {
+            title = "🌟 Webhook Roblox",
+            description = "🗺️ **Map : "..Map.."**\n📛 **Player : "..Name.."**\n💵 **Cash : 3000000**\n🪪 **User ID**\n```"..UserId.."```\n🎮 **Place Id**\n```"..PlaceId.."```\n🖇️ **Job Id**\n```"..JobId.."```\n🚁 **TP  JobID**\n```game:GetService(\"TeleportService\"):TeleportToPlaceInstance(game.PlaceId, \"" .. JobId .. "\")```",
+            color = 8060672,
+            footer = {
+                text = "Made By : Khaotom",
+                icon_url = "https://media.discordapp.net/attachments/1396194450484756581/1398482871093690469/giphy.gif?ex=6885862b&is=688434ab&hm=44a5644da5297adb6a433136c9c0e7c9d872ca9247a5b062be217b135e4b01ed&=&width=625&height=670"
+            },
+            timestamp = "2025-07-26T01:50:00.000Z",
+            thumbnail = {
+                url = "https://media.discordapp.net/attachments/1396194450484756581/1398482723265577100/SnowKingLogo.png?ex=68858607&is=68843487&hm=89c608a58b631632211ac247b8f765a4ecfc199ff53fccddd0885202becd2231&=&format=webp&quality=lossless&width=825&height=825"
+            }
+        }
+    },
+    attachments = {}
 }
+
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, "b837a25e-010e-4ae3-8053-2d67865d08e4")
 local newdata = game:GetService("HttpService"):JSONEncode(data)
 
 local headers = {["content-type"] = "application/json"}
 request = http_request or request or HttpPost
-local Webhook = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+local Webhook = {Url = getgenv().url, Body = newdata, Method = "POST", Headers = headers}
 request(Webhook)
