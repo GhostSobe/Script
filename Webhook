@@ -6,6 +6,9 @@ local JobId = game.JobId
 local UserId = game.Players.LocalPlayer.UserId
 local Name = game.Players.LocalPlayer.Name
 local Cash = game:GetService("Players").LocalPlayer.PlayerGui.Sheckles_UI.TextLabel.Text
+local GameId = game.GameId
+
+print(GameId)
 
 local data = {
     content = nil,
