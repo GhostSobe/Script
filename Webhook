@@ -5,20 +5,20 @@ local PlaceId = game.PlaceId
 local JobId = game.JobId
 local UserId = game.Players.LocalPlayer.UserId
 local Name = game.Players.LocalPlayer.Name
-local Cash = game:GetService("Players").LocalPlayer.leaderstats.Sheckles.Value
+local Cash = game:GetService("Players").LocalPlayer.PlayerGui.Sheckles_UI.TextLabel.Text
 
 local data = {
     content = nil,
     embeds = {
         {
-            title = "🌟 Webhook Roblox",
+            title = "🌟 __Webhook Roblox__",
             description = "🗺️ **Map : "..Map.."**\n📛 **Player : "..Name.."**\n💵 **Cash : "..Cash.."**\n🪪 **User ID**\n```"..UserId.."```\n🎮 **Place Id**\n```"..PlaceId.."```\n🖇️ **Job Id**\n```"..JobId.."```",
             color = 8060672,
             footer = {
                 text = "Made By : Khaotom",
                 icon_url = "https://media.discordapp.net/attachments/1396194450484756581/1398482871093690469/giphy.gif?ex=6885862b&is=688434ab&hm=44a5644da5297adb6a433136c9c0e7c9d872ca9247a5b062be217b135e4b01ed&=&width=625&height=670"
             },
-            timestamp = "2025-07-26T01:50:00.000Z",
+            timestamp = DateTime.now():ToIsoDate(),
             thumbnail = {
                 url = "https://media.discordapp.net/attachments/1396194450484756581/1398482723265577100/SnowKingLogo.png?ex=68858607&is=68843487&hm=89c608a58b631632211ac247b8f765a4ecfc199ff53fccddd0885202becd2231&=&format=webp&quality=lossless&width=825&height=825"
             }
