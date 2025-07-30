@@ -1,15 +1,16 @@
 if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
 
-local Plr = game:GetService("Players")
-local LocalPlr = Plr.LocalPlayer
-
 if game.PlaceId == 126884695634066 or game.PlaceId == 91867617264223 then -- Grow a Garden
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/GrowaGarden"))();
 elseif game.PlaceId == 79546208627805 or game.PlaceId == 126509999114328 then -- 99 Nights in the Forest
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/99%20Nights%20in%20the%20Forest"))();
 elseif game.PlaceId == 129827112113663 then -- Prospecting
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/Prospecting"))();
+elseif game.PlaceId == 292439477 then -- Phantom Forces
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/dementiaenjoyer/homohack/main/loader.lua"))();
+elseif game.GameId == 994732206 then -- Blox Fruit
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"))();
 else
     task.wait(2)
-    LocalPlr:Kick("Not Supported PlaceId: " .. game.PlaceId .. "\nPlease use the correct game to run this script.")
+    game.Players.LocalPlayer:Kick("Not Supported PlaceId: " .. game.PlaceId .. "\nPlease use the correct game to run this script.")
 end
