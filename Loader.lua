@@ -10,6 +10,8 @@ elseif game.PlaceId == 292439477 then -- Phantom Forces
     loadstring(game:HttpGet("https://raw.githubusercontent.com/dementiaenjoyer/homohack/main/loader.lua"))();
 elseif game.GameId == 994732206 then -- Blox Fruit
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"))();
+elseif game.GameId == 7709344486 then -- Steal a Brainrot
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DynaFetchy/Scripts/refs/heads/main/Loader.lua"))();
 else
     task.wait(2)
     game.Players.LocalPlayer:Kick("Not Supported PlaceId: " .. game.PlaceId .. "\nPlease use the correct game to run this script.")
