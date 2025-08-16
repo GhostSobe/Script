@@ -8,6 +8,12 @@ elseif game.PlaceId == 129827112113663 then -- Prospecting
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/Prospecting"))();
 elseif game.PlaceId == 292439477 then -- Phantom Forces
     loadstring(game:HttpGet("https://raw.githubusercontent.com/dementiaenjoyer/homohack/main/loader.lua"))();
+elseif game.GameId == 994732206 then -- Blox Fruit
+    local Settings = {
+        JoinTeam = "Pirates";
+        Translator = true;
+    }
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau"))(Settings)
 elseif game.GameId == 7709344486 then -- Steal a Brainrot
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/Steal%20A%20Brainrot"))();
 else
