@@ -8,7 +8,7 @@ elseif game.PlaceId == 129827112113663 then -- Prospecting
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/Prospecting"))();
 elseif game.PlaceId == 292439477 then -- Phantom Forces
     loadstring(game:HttpGet("https://raw.githubusercontent.com/dementiaenjoyer/homohack/main/loader.lua"))();
-elseif game.GameId == 994732206 then -- Blox Fruit
+elseif game.GameId == 994732206 and game.GameId == 3756501373 then -- Blox Fruit & Meme Sea
     local Settings = {
         JoinTeam = "Pirates";
         Translator = true;
