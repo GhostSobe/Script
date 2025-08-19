@@ -1,4 +1,4 @@
-getgenv().url = "https://discord.com/api/webhooks/1388528373914931352/5A9jOgMPt_S5sk0A-4wzj0pTAljqwNyvKzF86TruCAqjnTkvOskmiIKtpEUykiv57JVv"
+-- getgenv().url = "https://discord.com/api/webhooks/1388528373914931352/5A9jOgMPt_S5sk0A-4wzj0pTAljqwNyvKzF86TruCAqjnTkvOskmiIKtpEUykiv57JVv"
 
 local Map = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 local PlaceId = game.PlaceId
