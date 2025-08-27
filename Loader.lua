@@ -9,7 +9,7 @@ elseif game.PlaceId == 129827112113663 then -- Prospecting
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/Prospecting"))();
 elseif game.PlaceId == 292439477 then -- Phantom Forces
     loadstring(game:HttpGet("https://raw.githubusercontent.com/dementiaenjoyer/homohack/main/loader.lua"))();
-elseif game.GameId == 994732206 or game.GameId == 3756501373 then -- Blox Fruit & Meme Sea
+elseif game.GameId == 994732206 or game.GameId == 3756501373 then -- Blox Fruit
     loadstring(game:HttpGet("https://raw.githubusercontent.com/AAwful/Vector_Hub/0/v2"))()
 elseif game.GameId == 7709344486 then -- Steal a Brainrot
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostSobe/Script/refs/heads/main/Steal%20A%20Brainrot"))();
