@@ -1,0 +1,7 @@
+if game.GameId == 8066283370 then
+    getgenv().Key = "BONKHUB-mnCArF-q2o5HU"
+    getgenv().DiscordId = "1261801189268525216"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Toonza555/Project/refs/heads/main/PremiumLoader.lua", true))()
+elseif game.GameId == 6701277882 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kaisenlmao/loader/refs/heads/main/chiyo.lua"))()
+end
