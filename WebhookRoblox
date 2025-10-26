@@ -1,0 +1,36 @@
+local url = "https://discord.com/api/webhooks/1429157068153028793/OkmCJk6HR4qMhnv0MgTY1QzXaS6zYcp7iGUZtwsLWT_3sHciiOf2nj0LsB3MDmptSS6h"
+
+
+local Map = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+local PlaceId = game.PlaceId
+local JobId = game.JobId
+local UserId = game.Players.LocalPlayer.UserId
+local UserName = game.Players.LocalPlayer.Name
+-- local Cash = game:GetService("Players").LocalPlayer.PlayerGui.Sheckles_UI.TextLabel.Text
+-- local GameId = game.GameId
+
+
+local data = {
+    content = nil,
+    embeds = {
+        {
+            title = "🌟 __Webhook Roblox__",
+            description = "🗺️ **Map : "..Map.."**\n📛 **Player : "..UserName.."**\n🪪 **User ID**\n```"..UserId.."```\n🎮 **Place Id**\n```"..PlaceId.."```\n🖇️ **Job Id**\n```"..JobId.."```",
+            color = 1376000,
+            footer = {
+                text = "Made By : Khaotom"
+            },
+            timestamp = DateTime.now():ToIsoDate()
+        }
+    },
+    attachments = {}
+}
+
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {["content-type"] = "application/json"}
+request = http_request or request or HttpPost
+local Wh = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(Wh)
+
+-- DateTime.now():ToIsoDate()
